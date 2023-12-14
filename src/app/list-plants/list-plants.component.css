@@ -4,17 +4,20 @@
 
 
 body{
-  --border-bg-color: #DDD0C8;
-  --background-color:#323232;
+  --border-bg-color: #8d8e91;
+  --background-color:#000000;
   --background-color-dark:#242424;
   --background-color-light:#DDD0C8;
   --text-color: #DDD0C8;
   --text-color-dark: #323232;
-
   background-color:  var(--border-bg-color);
   overflow-x: hidden;
-  min-height: 100vh;
   overflow-y: hidden;
+}
+
+.price{
+  position: relative;
+  font-size: 20px;
 }
 
 .plant-card{
@@ -31,7 +34,6 @@ body{
 
 .plant-image{
   width: 100%;
-  height: 85%;
 }
 
 .main-container{

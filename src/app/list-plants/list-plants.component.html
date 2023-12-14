@@ -18,9 +18,11 @@
       <div class="plant-cards-container">
         <button class="plant-card" *ngFor="let plant of plants" (click)="onSelectPlant(plant)">
 
-          <img class="plant-image"src="Assets/images/{{ plant.image }}" alt="{{ plant.plant_name }}">
+          <img class="plant-image"src="assets/images/{{ plant.image }}.png" alt="{{ plant.family_name }}">
 
-          <b>{{ plant.plant_name }} ${{ plant.price }}</b>
+          <b>{{ plant.plant_name }} </b>
+          <br>
+          <b class="price">${{ plant.price }}</b>
 
         </button>
       </div>
