@@ -1,0 +1,66 @@
+body {
+  --border-bg-color: #DDD0C8;
+  --background-color:#323232;
+  --background-color-dark:#242424;
+  --background-color-light:#DDD0C8;
+  --text-color: #DDD0C8;
+  --text-color-dark: #323232;
+}
+
+* {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.dark-bg{
+  background-color: var(--background-color);
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.brand-name{
+  color: var(--text-color);
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.navbar-links a{
+  margin-top: 5px;
+  color:  var(--text-color);
+  max-width: 64rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar-links button{
+  margin-top: 5px;
+  color:  var(--text-color);
+  max-width: 64rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar-links a:hover{
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.navbar-links a.actives{
+  color: #ffffff;
+    transition: 0.5s;
+    font-weight: 700;
+}
+
+.navbar-links button:hover{
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.navbar-links button.actives{
+color: #ffffff;
+  transition: 0.5s;
+  font-weight: 700;
+}

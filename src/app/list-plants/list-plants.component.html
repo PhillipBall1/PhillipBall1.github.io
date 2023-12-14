@@ -1,0 +1,32 @@
+<body *ngIf="selectedPlant == null">
+  <div class="title-container">
+    <div class="title-card" align="center">
+      Click on a Plant for Info
+    </div>
+  </div>
+  <div class="main-container">
+
+    <div class="search-side-bar">
+      <div class="search-title">
+        Search
+      </div>
+      <div class="search-content">
+
+      </div>
+    </div>
+    <div class="plant-list" >
+      <div class="plant-cards-container">
+        <button class="plant-card" *ngFor="let plant of plants" (click)="onSelectPlant(plant)">
+
+          <img class="plant-image"src="Assets/images/{{ plant.image }}" alt="{{ plant.plant_name }}">
+
+          <b>{{ plant.plant_name }} ${{ plant.price }}</b>
+
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
