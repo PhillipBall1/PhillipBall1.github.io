@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlantsService } from './service/plants.service';
 
@@ -10,7 +10,13 @@ import { PlantsService } from './service/plants.service';
 
 
 
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  navigated: boolean | undefined;
+
+  ngOnInit(): void {
+    this.navigated = false;
+  }
 
   title = 'The-Leaf-Lounge';
   constructor(private router: Router)
@@ -19,7 +25,12 @@ export class AppComponent {
   }
 
   public displayPlantList(){
+    this.navigated = true;
     this.router.navigate(['list-plants'], { queryParams: { data: new Date()} });
+  }
+
+  public clickedHome(){
+    this.navigated = false;
   }
 }
 

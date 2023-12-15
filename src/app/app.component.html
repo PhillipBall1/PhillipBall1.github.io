@@ -1,6 +1,7 @@
 <body>
   <nav class="navbar navbar-expand-xxl navbar-dark dark-bg">
-    <a class="navbar-brand brand-name" routerLink="/home">The Leaf Lounge</a>
+    <img class="navbarImage" src="/assets/images/Ico.png" style="width: 50px;">
+    <a class="navbar-brand brand-name" routerLink="/" (click)="clickedHome()">The Leaf Lounge</a>
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav navbar-nav-scroll">
@@ -14,10 +15,19 @@
           <a class="nav-link" routerLink="/delete">Delete</a>
         </li>
         <li class="navbar-links">
-          <button class="nav-link" (click)="displayPlantList()">Search</button>
+          <button class="nav-link" (click)="displayPlantList()">Shop</button>
         </li>
       </ul>
     </div>
   </nav>
+
+  <body *ngIf="navigated == false">
+    <div class="picturesContainer">
+      <div class="pictureContainer">
+        <img class="homePage1" src="/assets/images/hompageIMG_1.png" style="width: 46.5%;">
+      </div>
+    </div>
+  </body>
+
 </body>
 <router-outlet></router-outlet>

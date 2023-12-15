@@ -1,9 +1,9 @@
 body {
-  --border-bg-color: #DDD0C8;
-  --background-color:#323232;
+  --border-bg-color: #5c734c;
+  --background-color:#000000;
   --background-color-dark:#242424;
   --background-color-light:#DDD0C8;
-  --text-color: #DDD0C8;
+  --text-color: #ffffff;
   --text-color-dark: #323232;
 }
 
@@ -20,15 +20,20 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.navbarImage{
+  margin-left: 100px;
+
+}
+
 .brand-name{
   color: var(--text-color);
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 30px;
   font-weight: bolder;
 }
 
 .navbar-links a{
-  margin-top: 5px;
   color:  var(--text-color);
   max-width: 64rem;
   font-size: 18px;
@@ -36,7 +41,6 @@ html, body {
 }
 
 .navbar-links button{
-  margin-top: 5px;
   color:  var(--text-color);
   max-width: 64rem;
   font-size: 18px;
@@ -44,23 +48,32 @@ html, body {
 }
 
 .navbar-links a:hover{
-    color: #ffffff;
+    color: #5c734c;
     transition: 0.5s;
 }
 
 .navbar-links a.actives{
-  color: #ffffff;
+  color: #5c734c;
     transition: 0.5s;
     font-weight: 700;
 }
 
 .navbar-links button:hover{
-  color: #ffffff;
+  color: #5c734c;
   transition: 0.5s;
 }
 
 .navbar-links button.actives{
-color: #ffffff;
+  color: #5c734c;
   transition: 0.5s;
   font-weight: 700;
+}
+a:hover{
+  color: #5c734c;
+  transition: 0.5s;
+}
+
+.navbar-nav{
+  position: absolute;
+  right: 15vh;
 }
