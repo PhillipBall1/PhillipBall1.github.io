@@ -8,7 +8,9 @@ export class Plant {
     public plant_description: string,
     public image: string,
     public price: number,
-    public id?: ObjectId) {}
+    public featured: boolean,
+    public id?: ObjectId
+    ) {}
 
   get plantName(): string { return this.plant_name }
   set plantName(plant_name: string) { this.plant_name = plant_name; }
@@ -27,4 +29,7 @@ export class Plant {
 
   get plantPrice(): number { return this.price }
   set plantPrice(price: number) { this.price = price; }
+
+  get plantFeatured() : boolean { return this.featured }
+  set plantFeatured(featured: boolean) { this.featured = featured }
 }

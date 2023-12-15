@@ -1,11 +1,11 @@
 <body>
   <nav class="navbar navbar-expand-xxl navbar-dark dark-bg">
     <img class="navbarImage" src="/assets/images/Ico.png" style="width: 50px;">
-    <a class="navbar-brand brand-name" routerLink="/" (click)="clickedHome()">The Leaf Lounge</a>
+    <a class="navbar-brand brand-name" routerLink="/" (click)="homeClicked()"> {{ title }}</a>
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse ">
       <ul class="navbar-nav navbar-nav-scroll">
-        <li class="navbar-links">
+        <li class="navbar-links " >
           <a class="nav-link" routerLink="/create">Create</a>
         </li>
         <li class="navbar-links">
@@ -20,14 +20,30 @@
       </ul>
     </div>
   </nav>
-
-  <body *ngIf="navigated == false">
-    <div class="picturesContainer">
-      <div class="pictureContainer">
-        <img class="homePage1" src="/assets/images/hompageIMG_1.png" style="width: 46.5%;">
+  <body *ngIf="!navigated">
+    <div class="pictureContainer">
+      <div class="grid-a">
+        <img class="front-image" src="/assets/images/hompageIMG_1.png" alt="Your Image">
+        <div class="image-overlay1">
+          Embrace Nature's Elegance:
+          <br>
+          Where Foliage Meets Serenity
+        </div>
+      </div>
+      <div class="grid-b">
+        <img class="front-image" src="/assets/images/hompageIMG_2.png" alt="Your Image">
+        <div class="image-overlay2">Something</div>
+      </div>
+      <div class="grid-c">
+        <img class="front-image" src="/assets/images/hompageIMG_3.png" alt="Your Image">
+        <div class="image-overlay3">Something</div>
       </div>
     </div>
   </body>
 
+  <router-outlet></router-outlet>
 </body>
-<router-outlet></router-outlet>
+
+
+
+

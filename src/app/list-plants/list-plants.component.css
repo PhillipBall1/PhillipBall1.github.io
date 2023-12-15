@@ -2,38 +2,15 @@
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
 body{
-  --border-bg-color: #8d8e91;
+  --border-bg-color: #ffffff;
   --background-color:#000000;
-  --background-color-dark:#242424;
-  --background-color-light:#DDD0C8;
-  --text-color: #DDD0C8;
+  --background-color-dark:#030f0a;
+  --background-color-light:#030f0a;
+  --text-color: #535353;
   --text-color-dark: #323232;
-  background-color:  var(--border-bg-color);
-  overflow-x: hidden;
   overflow-y: hidden;
-}
-
-.price{
-  position: relative;
-  font-size: 20px;
-}
-
-.plant-card{
-  text-align: center;
-  background-color: var(--background-color);
-  border-style:outset;
-  border-color: var(--border-bg-color);
-  font-size: 30px;
-  width: 100%;
-  box-shadow: 15px 20px 10px 0px rgba(0,0,0,0.2);
-  font-weight: bold;
-  color: var(--text-color);
-}
-
-.plant-image{
-  width: 100%;
+  overflow-x: hidden;
 }
 
 .main-container{
@@ -42,60 +19,69 @@ body{
 }
 
 .search-side-bar{
-  border-style: outset;
-  border-color: var(--border-bg-color);
   width: 100%;
   height: 100%;
-  background-color: var(--background-color-dark);
   margin-top: 5.6%;
-}
-
-.search-title{
-  text-align: center;
-  font-weight: bold;
-  color: var(--text-color);
-  font-size: 25px;
-  background-color: var(--background-color);
-}
-
-.plant-card {
-  position: relative;
-  border-style:outset;
-  background-color: var(--background-color);
-  border-color: var(--border-bg-color);
-  border-width: 3px;
-  width: 90%;
-  height: 100%;
-  box-shadow: 15px 20px 10px 0px rgba(0,0,0,0.2);
-  transition: 0.3s;
-  font-weight: bold;
-  color: var(--text-color);
-}
-
-.plant-card:hover {
-  height: 101%;
-  width: 91%;
-  box-shadow: 15px 20px 10px 5px rgba(0,0,0,0.5);
-}
-.plant-container {
-  display: absolute;
-  text-align: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  background-color: var(--background-color-dark);
+  margin-left: 7%;
+  background-color: #999999;
 }
 
 .plant-cards-container {
-
   margin-left: 3%;
   margin-right: auto;
   margin-top: 1%;
-  margin-bottom: auto;
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
-  row-gap: 3%;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 290px));
+  column-gap: 0.8vw;
+  row-gap: 0.9vw;
+
+}
+
+.plant-card {
+  border-style: none;
+  position: relative;
+  height: 100%;
+  transition: 0.3s;
+  font-weight: bold;
+  color: var(--text-color);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.plant-card:hover {
+  box-shadow: 6px 6px 8px 2px rgba(0,0,0,0.5);
+}
+
+.detail-price{
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.detail-image{
+  background-color: var(--background-color);
+  width: 100%;
+}
+
+.detail-text{
+  height: 15vh;
+}
+
+.text-container{
+  text-align: left;
+
+}
+
+.detail-name{
+  font-weight: 400;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.detail-family-name{
+  width: 20%;
+  margin: 0 auto;
+  font-size: 1em;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #999999;
 }
 

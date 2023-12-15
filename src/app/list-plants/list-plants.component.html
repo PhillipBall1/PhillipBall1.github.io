@@ -1,29 +1,26 @@
 <body *ngIf="selectedPlant == null">
-  <div class="title-container">
-    <div class="title-card" align="center">
-      Click on a Plant for Info
-    </div>
-  </div>
   <div class="main-container">
 
     <div class="search-side-bar">
-      <div class="search-title">
-        Search
-      </div>
       <div class="search-content">
 
       </div>
     </div>
-    <div class="plant-list" >
+    <div class="plant-list-container" >
       <div class="plant-cards-container">
         <button class="plant-card" *ngFor="let plant of plants" (click)="onSelectPlant(plant)">
-
-          <img class="plant-image"src="assets/images/{{ plant.image }}.png" alt="{{ plant.family_name }}">
-
-          <b>{{ plant.plant_name }} </b>
-          <br>
-          <b class="price">${{ plant.price }}</b>
-
+          <img class="detail-image"src="assets/images/{{ plant.image }}.png">
+          <div class="detail-text">
+            <div class="text-container">
+              <span class="detail-name">{{ plant.plant_name }}</span>
+            </div>
+            <div class="text-container">
+              <span class="detail-family-name">{{ plant.family_name }}</span>
+            </div>
+            <div class="text-container">
+              <span class="detail-price">${{ plant.price }}/oz</span>
+            </div>
+          </div>
         </button>
       </div>
     </div>
