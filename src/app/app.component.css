@@ -22,13 +22,13 @@ html, body {
 }
 
 .navbarImage{
-  margin-left: 100px;
+  margin-left: 10%;
 
 }
 
 .brand-name{
   color: var(--text-color);
-  margin-left: 10px;
+  margin-left: 11%;
   font-size: 30px;
   font-weight: bolder;
 }
@@ -103,19 +103,20 @@ html, body {
   object-fit: cover;
 }
 .image-overlay1 {
-  width: 100vh;
   position: absolute;
-  font-size: 2vw;
+  font-size: 3vw;
   font-weight: bold;
   color: var(--text-color);
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 40%;
+  animation: slideInText 1s ease-in 0s 1 normal both;
   transform: translate(-50%, -50%);
-  text-align: center;
+  text-align: left;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
+
 }
 
 .image-overlay2 {
-  width: 100vh;
   position: absolute;
   font-size: 2vw;
   font-weight: bold;
@@ -127,7 +128,6 @@ html, body {
 }
 
 .image-overlay3 {
-  width: 100vh;
   position: absolute;
   font-size: 2vw;
   font-weight: bold;
@@ -136,4 +136,29 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.subtext{
+  position: absolute;
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: var(--text-color);
+  top: 32%;
+  left: 20%;
+  animation: slideInText 1s ease-in 1s 1 normal both;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
+}
+
+@keyframes slideInText{
+  from{
+    transform: translate(-60%, -50%);
+    opacity: 0;
+  }
+
+  to{
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
 }
