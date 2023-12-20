@@ -4,7 +4,7 @@ import { ListPlantsComponent } from './list-plants/list-plants.component';
 import { DisplayPlantComponent } from './display-plant/display-plant.component';
 
 const routes: Routes = [
-  { path: 'list-plants', component: ListPlantsComponent },
+  { path: 'plants', component: ListPlantsComponent },
   { path: 'display-plant', component: DisplayPlantComponent }
 ];
 

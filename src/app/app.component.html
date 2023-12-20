@@ -1,41 +1,73 @@
-<body>
-  <nav class="navbar navbar-expand-xxl navbar-dark dark-bg">
-    <img class="navbarImage" src="/assets/images/Ico.png" style="width: 50px;">
-    <a class="navbar-brand brand-name" routerLink="/" (click)="homeClicked()"> {{ title }}</a>
+<body class="page">
+  <nav class="navbar navbar-expand-lg navbar-custom-bg ">
+    <div class="container-fluid">
 
-    <div class="collapse navbar-collapse ">
-      <ul class="navbar-nav navbar-nav-scroll">
-        <li class="navbar-links">
-          <button class="nav-link" (click)="displayPlantList()">Shop</button>
-        </li>
-      </ul>
+      <a class="navbar-brand" href="#" >
+        <img src="/assets/images/Ico.png" alt="Logo" width="40vh" height="40vh">
+        The Leaf Lounge
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link navbar-custom-text" aria-current="page" href="#">Home</a>
+          <button class="nav-link navbar-custom-text" (click)="displayPlantList()">Shop</button>
+          <button class="nav-link navbar-custom-text " href="#">About</button>
+          <button class="nav-link navbar-custom-text " href="#">Contact</button>
+        </div>
+      </div>
     </div>
   </nav>
-  <body *ngIf="!navigated">
-    <div class="pictureContainer">
-      <div class="grid-a">
-        <img class="front-image" src="/assets/images/hompageIMG_1.png" alt="Your Image">
-        <div class="image-overlay1">
-          Leaf by Leaf,
-          <br>
-          Bring the Outdoors In.
-        </div>
-        <button class="subtext nav-link" (click)="displayPlantList()">Shop Now</button>
-      </div>
-      <div class="grid-b">
-        <img class="front-image" src="/assets/images/hompageIMG_2.png" alt="Your Image">
-        <div class="image-overlay2">Something</div>
-      </div>
-      <div class="grid-c">
-        <img class="front-image" src="/assets/images/hompageIMG_3.png" alt="Your Image">
-        <div class="image-overlay3">Something</div>
-      </div>
-    </div>
-  </body>
 
-  <router-outlet></router-outlet>
+  <div *ngIf="!navigated" class="contents">
+    <section>
+      <div class="picture-container">
+        <div class="grid-a">
+          <img class="front-image" src="/assets/images/hompageIMG_1.png" alt="Your Image">
+          <div class="image-overlay">
+            Bring the Outdoors in.
+            <button class="subtext nav-link" routerLink="/plants">Shop Now</button>
+          </div>
+
+        </div>
+        <div class="grid-b">
+          <img class="front-image" src="/assets/images/hompageIMG_2.png" alt="Your Image">
+          <div class="image-overlay">
+            Check Out the Featured Selection!
+            <button class="subtext nav-link" routerLink="/plants">Featured</button>
+          </div>
+
+        </div>
+        <div class="grid-c">
+          <img class="front-image" src="/assets/images/hompageIMG_3.png" alt="Your Image">
+          <div class="image-overlay">Find the Right Plants For You.</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="featured-container1">
+        <div class="subject animation">
+
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="featured-container2">
+        <div class="subject animation">
+
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="featured-container3">
+        <div class="subject animation">
+
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 
-
-
+<router-outlet></router-outlet>
 
