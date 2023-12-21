@@ -1,24 +1,49 @@
 <body class="page">
-  <nav class="navbar navbar-expand-lg navbar-custom-bg ">
-    <div class="container-fluid">
-
-      <a class="navbar-brand" href="#" >
-        <img src="/assets/images/Ico.png" alt="Logo" width="40vh" height="40vh">
-        The Leaf Lounge
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link navbar-custom-text" aria-current="page" href="#">Home</a>
-          <button class="nav-link navbar-custom-text" (click)="displayPlantList()">Shop</button>
-          <button class="nav-link navbar-custom-text " href="#">About</button>
-          <button class="nav-link navbar-custom-text " href="#">Contact</button>
+  <div *ngIf="navigated">
+    <nav class="navbar navbar-expand-lg navbar-custom-bg">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/home" (click)="homeClicked()">
+          <div class="word">
+            <img src="/assets/images/Ico.png" alt="Logo" width="40vh" height="40vh">
+            The Leaf Lounge
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <button class="nav-link navbar-custom-text" routerLink="/plants" (click)="displayPlants()">Shop</button>
+            <button class="nav-link navbar-custom-text" href="#">About</button>
+            <button class="nav-link navbar-custom-text" href="#">Contact</button>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
+  <div *ngIf="!navigated">
+    <nav class="navbar navbar-expand-lg navbar-custom-bg-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/home" (click)="homeClicked()">
+          <div class="word">
+            <img src="/assets/images/Ico.png" alt="Logo" width="40vh" height="40vh">
+            The Leaf Lounge
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <button class="nav-link navbar-custom-text" routerLink="/plants" (click)="displayPlants()">Shop</button>
+            <button class="nav-link navbar-custom-text" href="#">About</button>
+            <button class="nav-link navbar-custom-text" href="#">Contact</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
 
   <div *ngIf="!navigated" class="contents">
     <section>
@@ -26,8 +51,8 @@
         <div class="grid-a">
           <img class="front-image" src="/assets/images/hompageIMG_1.png" alt="Your Image">
           <div class="image-overlay">
-            Bring the Outdoors in.
-            <button class="subtext nav-link" routerLink="/plants">Shop Now</button>
+            Bring the Outdoors in
+            <button class="subtext nav-link" routerLink="/plants" (click)="displayPlants()">Shop Now</button>
           </div>
 
         </div>
@@ -54,7 +79,7 @@
     </section>
     <section>
       <div class="featured-container2">
-        <div class="subject animation">
+        <div class="animation">
 
         </div>
       </div>
@@ -69,5 +94,6 @@
   </div>
 </body>
 
-<router-outlet></router-outlet>
+
+
 

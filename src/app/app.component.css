@@ -1,44 +1,44 @@
-body {
+body, html {
   --border-bg-color: #5d744c;
-
-
   --background-color:#000000;
   --background-color-dark:#242424;
   --background-color-light:#DDD0C8;
   --text-color: #ffffff;
   --text-color-dark: #323232;
-
-  --cw-1: #D4AF37;
+  --cw-1: #ffeaa7;
   --cw-2: #5d744c;
-  --cw-3: #545454;
-
+  --cw-3: #e7d083;
   --timeline-name: "animation";
+
+  background-color: var(--cw-3);
+ max-width: 100%;
+ overflow-x: hidden;
 }
+
 * {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.page{
- background-color: var(--cw-3);
-}
 
 .contents{
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   overflow-y: auto;
   height: 100vh;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-snap-stop: normal;
 }
 
 section{
-  min-height: 50vw;
+  min-height: 100vh;
   width: 100%;
   scroll-snap-align: start;
 }
 
-
-
+.navbar-toggler{
+  background-color: white;
+}
 
 .animation {
   opacity: 0;
@@ -60,7 +60,10 @@ section{
 }
 
 .navbar-custom-bg {
-  background-color: #545454;
+  background-color: #ffffff00;
+}
+.navbar-custom-bg {
+  background-color: #000000;
 }
 .navbar-custom-text{
   color: white;
@@ -71,14 +74,20 @@ section{
 .navbar-custom-float{
   float: right;
 }
-.navbar-brand{
+.navbar-brand .word{
   color: white;
   font-size: 30px;
   font-weight: 700;
 }
 
+.navbar-brand:hover{
+  color: var(--cw-1);
+  text-shadow: 3px 3px 8px rgb(83, 83, 83);
+  font-size: 33px;
+}
+
 .navbar-custom-text:hover{
-  color: #D4AF37;
+  color: var(--cw-1);
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
   font-size: 22px;
 }
@@ -86,7 +95,7 @@ section{
 .picture-container{
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(10, 5vw);
+  grid-template-rows: repeat(10, 10vh);
   position: relative;
 
 }
@@ -123,35 +132,48 @@ section{
   position: absolute;
   color: var(--text-color);
   font-weight: bold;
-  animation: slideInText 1s ease-in 0s 1 normal both;
+  animation: slideInText 0.5s ease-in 0s 1 normal both;
   transform: translate(-50%, -50%);
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
   text-align: left;
 }
 
 .grid-a .image-overlay {
+  font-size: 5vw;
+  left: 50%;
+  margin-top: -70vh;
+  width: 50vw;
+  margin-left: 2vw;
+}
+
+.grid-b .image-overlay,.grid-c .image-overlay {
   font-size: 3vw;
-  top: 20%;
-  left: 40%;
+  left: 50%;
+  margin-top: -35vh;
+  width: 50vw;
+  margin-left: 2vw;
 }
 
-.grid-b .image-overlay {
-  font-size: 2.1vw;
-  top: 50%;
-  left: 40%;
+.grid-a .subtext{
+  font-size: 3vw;
+  margin-top: 3vh;
+  width: 50vw;
+  left: 50%;
+  margin-left: 2vw;
 }
 
-.grid-c .image-overlay {
-  font-size: 4vw;
-  top: 70%;
-  left: 40%;
+.grid-b .subtext{
+  font-size: 2vw;
+  margin-top: 3vh;
+  width: 50vw;
+  left: 50%;
+  margin-left: 2vw;
 }
 
 .subtext{
   position: absolute;
   font-weight: bold;
   color: var(--text-color);
-  font-size: 1.5vw;
   animation: slideInText 1s ease-in 1s 1 normal both;
   transform: translate(-50%, -50%);
   text-align: left;
@@ -160,43 +182,33 @@ section{
 }
 
 .subtext:hover{
-  margin-left: 3.5%;
-  font-size: 2vw;
-  color: #D4AF37;
-}
-
-.grid-a .subtext{
-  left: 13%;
-  margin-top: 5%;
-}
-
-.grid-b .subtext{
-  left: 10%;
-  margin-top: 5%;
+  color: var(--cw-1);
+  font-size: 3vw;
 }
 
 .featured-container1{
   padding-top: 1%;
-  background-color: var(--cw-1);
-  height: 50vw;
+  background-color: black;
+  height: 100vh;
 }
 
 .featured-container2{
   padding-top: 1%;
   background-color: var(--cw-2);
-  height: 50vw;
+  height: 100vh;
 }
 
 .featured-container3{
   padding-top: 1%;
   background-color: var(--cw-3);
-  height: 50vw;
+  height: 100vh;
 }
 
 
 @keyframes slideInText{
   from{
-    transform: translate(-60%, -50%);
+
+    transform: translate(-70%, -50%);
     opacity: 0;
   }
 
@@ -217,47 +229,54 @@ section{
 }
 
 @media(max-width: 1000px){
+
+  .navbar-custom-text{
+    background-color: #000000a6;
+    width: 100%;
+  }
   .navbar-brand{
     color: white;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: 700;
   }
   .navbar-brand img{
-    width: 30px;
-    height: 30px;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .navbar-toggler{
-    width: 20%;
-    height: 1%;
+    width: 4rem;
+    height: 2.5rem;
   }
-
 
   .grid-a .image-overlay {
-    font-size: 5vw;
-    top: 40%;
-    left: 40%;
-  }
-
-  .grid-b .image-overlay {
-    font-size: 1rem;
-    top: 70%;
-    left: 40%;
-  }
-  .subtext{
-    font-size: 2vw;
+    font-size: 15vw;
+    left: 50%;
+    margin-top: -70vh;
+    width: 100vw;
+    margin-left: 10vw;
   }
 
   .grid-a .subtext{
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    left: clamp(min(1vw, 3rem), 300px, max(1vw, 4rem));
-    margin-top: 5%;
+    font-size: 10vw;
+    left: 50%;
+    margin-top: 10vh;
+    width: 100vw;
+    margin-left: 10vw;
   }
 
-  .grid-b .subtext{
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    margin-top: 1%;
-    left: clamp(min(1vw, 3rem), 300px, max(1vw, 10rem));
+  .grid-a {
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 11;
+  }
+  .grid-b {
+    opacity: 0;
+  }
+  .grid-c {
+    opacity: 0;
   }
 }
 
