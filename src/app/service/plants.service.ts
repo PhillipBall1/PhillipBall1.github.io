@@ -17,6 +17,14 @@ export class PlantsService {
       });
     }
 
+    public getFeaturedPlants(callback: (plants: Plant[]) => void): void {
+      let request = this.host + '/featured-plants';
+
+      this.http.get<Plant[]>(request).subscribe((plants: Plant[]) => {
+        callback(plants);
+      });
+    }
+
     public getPlantByID(id: ObjectId, callback: (plant: Plant) => void): void {
       let request = this.host + `/plants/${id}`;
 

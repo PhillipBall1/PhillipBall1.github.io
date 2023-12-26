@@ -1,0 +1,67 @@
+<body>
+  <div class="contents">
+    <section>
+      <div class="picture-container">
+        <div class="grid-a">
+          <img class="front-image" src="/assets/images/hompageIMG_1.png" alt="Your Image">
+          <div class="image-overlay">
+            Bring the Outdoors in
+            <button class="subtext nav-link" routerLink="/plants" (click)="displayPlants()">Shop Now</button>
+          </div>
+
+        </div>
+        <div class="grid-b">
+          <img class="front-image" src="/assets/images/hompageIMG_2.png" alt="Your Image">
+          <div class="image-overlay">
+            Check Out the Featured Selection!
+            <button class="subtext nav-link" routerLink="/plants">Featured</button>
+          </div>
+
+        </div>
+        <div class="grid-c">
+          <img class="front-image" src="/assets/images/hompageIMG_3.png" alt="Your Image">
+          <div class="image-overlay">Find the Right Plants For You.</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="featured-text"></div>
+      <div class="featured-container">
+        <div class="carousel">
+
+          <div class="plants-container">
+            <div *ngFor="let plant of featuredPlants; let i = index"
+                 [class.center]="i === currentIndex"
+                 [class.right1]="(i - currentIndex) === 1"
+                 [class.left1]="currentIndex - i === 1"
+                 [class.right2]="(i - currentIndex) === 2"
+                 [class.left2]="currentIndex - i === 2"
+                 >
+                 <button class="plant-card" (click)="onSelectPlant(plant)">
+                  <img class="detail-image"src="assets/images/{{ plant.image }}.png">
+                  <div class="detail-text">
+                    <div class="text-container">
+                      <span class="detail-name">{{ plant.plant_name }}</span>
+                    </div>
+                    <div class="text-container">
+                      <span class="detail-family-name">{{ plant.family_name }}</span>
+                    </div>
+                    <div class="text-container">
+                      <span class="detail-price">${{ plant.price }}/oz</span>
+                    </div>
+                  </div>
+                </button>
+            </div>
+          </div>
+          <svg class="left-button" (click)="moveLeft()" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 25 25">
+            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+          </svg>
+          <svg class="right-button" (click)="moveRight()" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 25 25">
+            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>

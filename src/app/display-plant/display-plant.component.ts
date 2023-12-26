@@ -16,7 +16,6 @@ export class DisplayPlantComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.app.navigated = true;
     this.route.queryParams.subscribe(params => {
       const plantString = params['plant'];
       if (plantString) {
