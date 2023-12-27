@@ -1,336 +1,271 @@
-body, html {
-  --text-color: #ffffff;
-  --cw-1: #ffeaa7;
-  --cw-2: #5d744c;
-  --cw-3: #e7d083;
-  --fs-xl: clamp(3rem, 4vw + 1rem, 4rem);
-  --fs-lg: clamp(2rem, 3vw + 1rem, 3rem);
-  --fs-md: clamp(1rem, 3vw + 1rem, 2.4rem);
-  --fs-smd: clamp(0.5rem, 2.5vw + 0.5rem, 1.8rem);
-  --fs-s: clamp(0.25rem, 2vw + 0.25rem, 1.4rem);
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | MAIN BODY VARIABLES + BOUNDS SETTINGS                    |
+  +----------------------------------------------------------+*/
+  body, html {
+    --text-color: #ffffff;
+    --cw-1: #ffeaa7;
+    --cw-2: #5d744c;
+    --cw-3: #00060b;
+    --cw-4: #5d744c;
+    --fs-xl: clamp(4.75rem, 4.00vw + 2.00rem, 6.00rem);
+    --fs-lg: clamp(4.25rem, 3.50vw + 1.50rem, 5.00rem);
+    --fs-lmd:clamp(3.75rem, 3.50vw + 1.50rem, 4.00rem);
+    --fs-md: clamp(2.25rem, 3.00vw + 1.00rem, 3.00rem);
+    --fs-smd:clamp(1.75rem, 2.50vw + 0.75rem, 2.50rem);
+    --fs-s:  clamp(1.25rem, 2.00vw + 0.50rem, 2.00rem);
+    --fs-xs: clamp(0.75rem, 1.50vw + 0.25rem, 1.50rem);
 
-  background-color: black;
-  max-width: 100svw;
-  overflow-x: hidden;
-}
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--cw-3);
 
-* {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
 
-
-.contents{
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 100svh;
-  scroll-snap-type: y proximity;
-  scroll-snap-stop: normal;
-}
-
-section{
-  min-height: 100svh;
-  width: 100svw;
-  scroll-snap-align: start;
-}
-
-.picture-container{
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(10, 10vh);
-  position: relative;
-
-}
-
-.grid-a {
-  position: relative;
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 11;
-}
-.grid-b {
-  position: relative;
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 1;
-  grid-row-end: 6;
-}
-.grid-c {
-  position: relative;
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 6;
-  grid-row-end: 11;
-}
-.front-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: warpIn 1s ease-in 0s 1 normal both;
-}
-
-.image-overlay{
-  position: absolute;
-  color: var(--text-color);
-  font-weight: bold;
-  animation: slideInText 0.5s ease-in 0s 1 normal both;
-  transform: translate(-50%, -50%);
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
-  text-align: left;
-}
-
-.grid-a .image-overlay {
-  font-size: var(--fs-xl);
-  left: 50%;
-  margin-top: -70vh;
-  width: 50vw;
-  margin-left: 2vw;
-}
-
-.grid-b .image-overlay,.grid-c .image-overlay {
-  font-size: var(--fs-md);
-  left: 50%;
-  margin-top: -35svh;
-  width: 50svw;
-  margin-left: 2svw;
-}
-
-.grid-a .subtext{
-  font-size: var(--fs-md);
-  margin-top: 2svh;
-  width: 50svw;
-  left: 50%;
-}
-
-.grid-b .subtext{
-  font-size: var(--fs-smd);
-  margin-top: 2svh;
-  width: 50svw;
-  left: 50%;
-}
-
-.subtext{
-  position: absolute;
-  font-weight: bold;
-  color: var(--text-color);
-  animation: slideInText 1s ease-in 1s 1 normal both;
-  transform: translate(-50%, -50%);
-  text-align: left;
-  transition: 200ms;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
-}
-
-.subtext:hover{
-  color: var(--cw-1);
-  margin-left: 1svw;
-}
-
-.featured-text{
-  font-size: var(--fs-xl);
-  width: 100%;
-  color: var(--text-color);
-  margin-top: 10svh;
-  text-align: left;
-  margin-left: 10svw;
-}
-
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.plants-container{
-  display: flex;
-  overflow: hidden;
-  width: 100svw;
-  transition: opacity 0.5s, transform 0.5s;
-  -webkit-mask-image: linear-gradient(90deg,transparent,#fff 30%,#fff 80%,transparent);
-}
-
-.plant-card{
-  border: none;
-  width: 20svw;
-  height: 80svh;
-  padding-left: 0.5svw;
-  padding-right: 0.5svw;
-  background-color: black;
-}
-
-.detail-price{
-  font-weight: 600;
-  font-size:var(--fs-s);
-}
-
-.detail-image{
-  position: relative;
-  top: 0;
-  width: 100%;
-}
-
-.detail-text{
-  padding-left: 1svw;
-  color: white;
-  height: 15vh;
-  background-color: #141414;
-}
-
-.text-container{
-  text-align: left;
-}
-
-.detail-name{
-  font-weight: 400;
-  font-size:var(--fs-sm);
-  text-transform: uppercase;
-}
-
-.detail-family-name{
-  margin: 0 auto;
-  font-size: var(--fs-s);
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #999999;
-}
-
-.center {
-  opacity: 1;
-}
-
-.left1, .right1{
-  opacity: 0.4;
-}
-
-.left2, .right2 {
-  opacity: 0.2;
-}
-
-.right-button {
-  width: 10svw;
-  min-height: 10svh;
-  position: absolute;
-  cursor: pointer;
-  fill: #fff;
-  right: 5svw;
-}
-
-.right-button:hover {
-  fill: var(--cw-1);
-}
-
-.left-button {
-  width: 10svw;
-  min-height: 10svh;
-  position: absolute;
-  cursor: pointer;
-  fill: #fff;
-  left: 5svw;
-  transform: rotate(180deg);
-}
-
-.left-button:hover {
-  fill: var(--cw-1);
-}
-
-
-.featured-container2{
-  padding-top: 1%;
-  background-color: var(--cw-2);
-  height: 100vh;
-}
-
-.featured-container3{
-  padding-top: 1%;
-  background-color: var(--cw-3);
-  height: 100vh;
-}
-
-
-@keyframes slideInText{
-  from{
-
-    transform: translate(-70%, -50%);
-    opacity: 0;
+    height: 100svh;
+    scroll-snap-type: y proximity;
+    scroll-snap-stop: normal;
   }
-
-  to{
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-}
-
-@keyframes warpIn{
-  from{
-    opacity: 0;
-  }
-
-  to{
-    opacity: 1;
-  }
-}
-
-@media(max-width: 1000px){
-  .grid-a .image-overlay {
-    font-size: var(--fs-xl);
-    left: 50%;
-    margin-top: -70svh;
+  section{
+    min-height: 100svh;
     width: 100svw;
-    margin-left: 10svw;
+    scroll-snap-align: start;
   }
-
-  .grid-a .subtext{
-    font-size: var(--fs-lg);
-    left: 50svw;
-    margin-top: 3svh;
+  .section-break{
+    height: 32svh;
     width: 100svw;
-  }
 
-  .grid-a {
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | GRID FIRST PICTURES DISPLAY + BOUNDS SETTING             |
+  +----------------------------------------------------------+*/
+  .picture-container{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 10vh);
     position: relative;
+  }
+  .grid-a, .grid-b, .grid-c{
+    position: relative;
+  }
+  .grid-a {
     grid-column-start: 1;
-    grid-column-end: 9;
+    grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 11;
   }
   .grid-b {
-    opacity: 0;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
   }
   .grid-c {
-    opacity: 0;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 11;
   }
-
-  .plant-card{
-    border: none;
-    width: 33svw;
-    height: 80svh;
-    padding-left: 0.5svw;
-    padding-right: 0.5svw;
-    background-color: black;
-
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | GRID MAIN TEXT OVERLAYS                                  |
+  +----------------------------------------------------------+*/
+  .grid-images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: warpIn 1s ease-in 0s 1 normal both;
   }
-}
-
-@media(max-width: 400px){
-
-  .plant-card{
-    border: none;
-    width: 90svw;
-    height: 90svh;
-    padding-left: 0.5svw;
-    padding-right: 0.5svw;
-    background-color: black;
-
+  .grid-overlay{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 50svw;
+    margin-left: 2svw;
+    color: var(--text-color);
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
+    font-weight: bold;
+    animation: slideInText 0.5s ease-in 0s 1 normal both;
+    font-size: var(--fs-lg);
   }
-
+  .grid-subtext{
+    font-size: var(--fs-md);
+    cursor: pointer;
+    transition: 200ms;
+    width: 15svw;
+  }
+  .grid-subtext:hover{
+    color: var(--cw-1);
+    margin-left: 1svw;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | FEATURED CONTAINERS BOUNDS SETTINGS                      |
+  +----------------------------------------------------------+*/
+  .carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .plants-container{
+    margin-top: -10svh;
     display: flex;
     overflow: hidden;
-    width: 90svw;
+    width: 75svw;
     transition: opacity 0.5s, transform 0.5s;
-    -webkit-mask-image: linear-gradient(90deg,transparent,#fff 0%,#fff 100%,transparent);
+    -webkit-mask-image: linear-gradient(90deg,transparent,#fff 30%,#fff 80%,transparent);
   }
-}
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | FEATURED PLANT CARDS BOUNDS +  CARDS DETAILS             |
+  +----------------------------------------------------------+*/
+  .plant-card{
+    border: none;
+    width: 25svw;
+    height: 70svh;
+    padding-left: 0.5svw;
+    padding-right: 0.5svw;
+    background-color: var(--cw-3);
+  }
+  .detail-name{
+
+    font-size:var(--fs-s);
+  }
+  .detail-family-name{
+    font-size: var(--fs-xs);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #a7a7a7;
+  }
+  .detail-price{
+    font-weight: 600;
+    font-size:var(--fs-xs);
+  }
+  .detail-image{
+    width: 100%;
+  }
+  .detail-text{
+    text-align: left;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: var(--text-color);
+    padding-left: 1svw;
+    background-color: var(--cw-4);
+    height: 100%;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | FEATURED HEADER + BUTTONS + BUTTON PRESS CHANGES         |
+  +----------------------------------------------------------+*/
+  .center {
+    opacity: 1;
+  }
+  .left1, .right1{
+    opacity: 0.4;
+  }
+  .left2, .right2 {
+    opacity: 0.2;
+  }
+  .right-button {
+    width: 10svw;
+    min-height: 10svh;
+    position: absolute;
+    cursor: pointer;
+    fill: #fff;
+    right: 5svw;
+  }
+  .right-button:hover {
+    fill: var(--cw-1);
+  }
+  .left-button {
+    width: 10svw;
+    min-height: 10svh;
+    position: absolute;
+    cursor: pointer;
+    fill: #fff;
+    left: 5svw;
+    transform: rotate(180deg);
+  }
+  .left-button:hover {
+    fill: var(--cw-1);
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | ANIMATIONS                                               |
+  +----------------------------------------------------------+*/
+  @keyframes slideInText{
+    from{
+      transform: translate(-70%, -50%);
+      opacity: 0;
+    }
+    to{
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+  @keyframes warpIn{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | SCREEN CHANGES                                           |
+  +----------------------------------------------------------+*/
+  @media(max-width: 1030px){
+
+    /*GRID TEXT CHANGES*/
+    .grid-overlay{
+      left: 50%;
+      top: 30%;
+      width: 100svw;
+    }
+
+    /*GRID BOUNDS CHANGES*/
+    .grid-a {
+      position: relative;
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 11;
+    }
+    .grid-b, .grid-c {
+      opacity: 0;
+    }
+
+    /*FEATURED CARD CHANGES*/
+    .plant-card{
+      width: 33svw;
+    }
+
+    /*IPHONE ZONE CHANGING THE CAROUSEL MAX CARDS ON SCREEN*/
+    @media(max-width: 600px){
+      .plant-card{
+        border: none;
+        width: 90svw;
+        height: 90svh;
+        padding-left: 0.5svw;
+        padding-right: 0.5svw;
+        background-color: black;
+
+      }
+      .plants-container{
+        display: flex;
+        overflow: hidden;
+        width: 90svw;
+        transition: opacity 0.5s, transform 0.5s;
+        -webkit-mask-image: linear-gradient(90deg,transparent,#fff 0%,#fff 100%,transparent);
+      }
+    }
+  }
+
+
 
 

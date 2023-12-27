@@ -53,12 +53,12 @@ export class HomeComponent implements OnInit{
   private updateVariableBasedOnWidth() {
     const width = window.innerWidth;
 
-    if (width <= 400) {
+    if (width <= 600) {
       this.currentIndex = 0;
-    } else if (width <= 1000) {
+    } else if (width <= 1030) {
       this.currentIndex = 1;
     } else {
-      this.currentIndex = 2;
+      this.currentIndex = 1;
     }
   }
 }

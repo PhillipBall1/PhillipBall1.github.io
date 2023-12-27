@@ -3,30 +3,28 @@
     <section>
       <div class="picture-container">
         <div class="grid-a">
-          <img class="front-image" src="/assets/images/hompageIMG_1.png" alt="Your Image">
-          <div class="image-overlay">
+          <img class="grid-images" src="/assets/images/hompageIMG_1.png" alt="Your Image">
+          <div class="grid-overlay">
             Bring the Outdoors in
-            <button class="subtext nav-link" routerLink="/plants" (click)="displayPlants()">Shop Now</button>
+            <div class="grid-subtext nav-link" routerLink="/plants" (click)="displayPlants()">Shop Now</div>
           </div>
-
         </div>
         <div class="grid-b">
-          <img class="front-image" src="/assets/images/hompageIMG_2.png" alt="Your Image">
-          <div class="image-overlay">
-            Check Out the Featured Selection!
-            <button class="subtext nav-link" routerLink="/plants">Featured</button>
+          <img class="grid-images" src="/assets/images/hompageIMG_2.png" alt="Your Image">
+          <div class="grid-overlay">
+            Check out the Featured Selection
+            <div class="grid-subtext nav-link" routerLink="/plants" (click)="displayPlants()">Featured</div>
           </div>
-
         </div>
         <div class="grid-c">
-          <img class="front-image" src="/assets/images/hompageIMG_3.png" alt="Your Image">
-          <div class="image-overlay">Find the Right Plants For You.</div>
+          <img class="grid-images" src="/assets/images/hompageIMG_3.png" alt="Your Image">
+          <div class="grid-overlay">Find the Plant for YOU</div>
         </div>
       </div>
     </section>
     <section>
-      <div class="featured-text">Featured</div>
       <div class="featured-container">
+        <img class="section-break" src="/assets/svg/section-break.svg">
         <div class="carousel">
           <div class="plants-container">
             <div *ngFor="let plant of featuredPlants; let i = index"
@@ -39,15 +37,9 @@
                  <button class="plant-card" (click)="onSelectPlant(plant)">
                   <img class="detail-image"src="assets/images/{{ plant.image }}.png">
                   <div class="detail-text">
-                    <div class="text-container">
-                      <span class="detail-name">{{ plant.plant_name }}</span>
-                    </div>
-                    <div class="text-container">
-                      <span class="detail-family-name">{{ plant.family_name }}</span>
-                    </div>
-                    <div class="text-container">
-                      <span class="detail-price">${{ plant.price }}/oz</span>
-                    </div>
+                    <span class="detail-name">{{ plant.plant_name }}</span><br>
+                    <span class="detail-family-name">{{ plant.family_name }}</span><br>
+                    <span class="detail-price">${{ plant.price }}/oz</span>
                   </div>
                 </button>
             </div>
@@ -62,6 +54,7 @@
       </div>
     </section>
     <section>
+      <div class="section-break"></div>
       <div class="featured-container">
 
       </div>
