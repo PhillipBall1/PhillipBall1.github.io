@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Plant } from '../models/plants.model';
 import { PlantsService } from '../service/plants.service';
@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit{
     this.service.getFeaturedPlants((plants: Plant[]) => {
       this.featuredPlants = plants;
     });
+    this.updateVariableBasedOnWidth();
   }
 
   onSelectPlant(selectedPlant: Plant){
     this.selectedPlant = selectedPlant;
-    console.log("User selected" + selectedPlant.plant_name);
     this.router.navigate(['display-plant'], { queryParams: { plant: JSON.stringify(selectedPlant) } });
   }
 
@@ -43,5 +43,22 @@ export class HomeComponent implements OnInit{
   moveRight() {
     const firstPlant = this.featuredPlants.shift();
     this.featuredPlants.push(firstPlant!);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.updateVariableBasedOnWidth();
+  }
+
+  private updateVariableBasedOnWidth() {
+    const width = window.innerWidth;
+
+    if (width <= 400) {
+      this.currentIndex = 0;
+    } else if (width <= 1000) {
+      this.currentIndex = 1;
+    } else {
+      this.currentIndex = 2;
+    }
   }
 }

@@ -128,11 +128,12 @@ section{
 }
 
 .featured-text{
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);
   width: 100%;
   color: var(--text-color);
   margin-top: 10svh;
-  text-align: center;
+  text-align: left;
+  margin-left: 10svw;
 }
 
 .carousel {
@@ -144,8 +145,6 @@ section{
 .plants-container{
   display: flex;
   overflow: hidden;
-
-  width: 100%;
   width: 100svw;
   transition: opacity 0.5s, transform 0.5s;
   -webkit-mask-image: linear-gradient(90deg,transparent,#fff 30%,#fff 80%,transparent);
@@ -162,10 +161,12 @@ section{
 
 .detail-price{
   font-weight: 600;
-  font-size:var(--fs-sm);
+  font-size:var(--fs-s);
 }
 
 .detail-image{
+  position: relative;
+  top: 0;
   width: 100%;
 }
 
@@ -182,13 +183,13 @@ section{
 
 .detail-name{
   font-weight: 400;
-  font-size:var(--fs-smd);
+  font-size:var(--fs-sm);
   text-transform: uppercase;
 }
 
 .detail-family-name{
   margin: 0 auto;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-s);
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: #999999;
@@ -298,6 +299,37 @@ section{
   }
   .grid-c {
     opacity: 0;
+  }
+
+  .plant-card{
+    border: none;
+    width: 33svw;
+    height: 80svh;
+    padding-left: 0.5svw;
+    padding-right: 0.5svw;
+    background-color: black;
+
+  }
+}
+
+@media(max-width: 400px){
+
+  .plant-card{
+    border: none;
+    width: 90svw;
+    height: 90svh;
+    padding-left: 0.5svw;
+    padding-right: 0.5svw;
+    background-color: black;
+
+  }
+
+  .plants-container{
+    display: flex;
+    overflow: hidden;
+    width: 90svw;
+    transition: opacity 0.5s, transform 0.5s;
+    -webkit-mask-image: linear-gradient(90deg,transparent,#fff 0%,#fff 100%,transparent);
   }
 }
 
