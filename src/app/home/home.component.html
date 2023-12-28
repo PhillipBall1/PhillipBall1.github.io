@@ -1,64 +1,8 @@
 <body>
-  <div class="contents">
-    <section>
-      <div class="picture-container">
-        <div class="grid-a">
-          <img class="grid-images" src="/assets/images/hompageIMG_1.png" alt="Your Image">
-          <div class="grid-overlay">
-            Bring the Outdoors in
-            <div class="grid-subtext nav-link" routerLink="/plants" (click)="displayPlants()">Shop Now</div>
-          </div>
-        </div>
-        <div class="grid-b">
-          <img class="grid-images" src="/assets/images/hompageIMG_2.png" alt="Your Image">
-          <div class="grid-overlay">
-            Check out the Featured Selection
-            <div class="grid-subtext nav-link" routerLink="/plants" (click)="displayPlants()">Featured</div>
-          </div>
-        </div>
-        <div class="grid-c">
-          <img class="grid-images" src="/assets/images/hompageIMG_3.png" alt="Your Image">
-          <div class="grid-overlay">Find the Plant for YOU</div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="featured-container">
-        <img class="section-break" src="/assets/svg/section-break.svg">
-        <div class="carousel">
-          <div class="plants-container">
-            <div *ngFor="let plant of featuredPlants; let i = index"
-                 [class.center]="i === currentIndex"
-                 [class.right1]="(i - currentIndex) === 1"
-                 [class.left1]="currentIndex - i === 1"
-                 [class.right2]="(i - currentIndex) === 2"
-                 [class.left2]="currentIndex - i === 2"
-                 >
-                 <button class="plant-card" (click)="onSelectPlant(plant)">
-                  <img class="detail-image"src="assets/images/{{ plant.image }}.png">
-                  <div class="detail-text">
-                    <span class="detail-name">{{ plant.plant_name }}</span><br>
-                    <span class="detail-family-name">{{ plant.family_name }}</span><br>
-                    <span class="detail-price">${{ plant.price }}/oz</span>
-                  </div>
-                </button>
-            </div>
-          </div>
-          <svg class="left-button" (click)="moveLeft()" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 25 25">
-            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
-          </svg>
-          <svg class="right-button" (click)="moveRight()" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 25 25">
-            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
-          </svg>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="section-break"></div>
-      <div class="featured-container">
-
-      </div>
-    </section>
-  </div>
-
+  <section>
+    <app-home-image-grid></app-home-image-grid>
+  </section>
+  <section>
+    <app-home-featured-display></app-home-featured-display>
+  </section>
 </body>

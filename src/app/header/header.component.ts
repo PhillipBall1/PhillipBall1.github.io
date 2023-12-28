@@ -19,7 +19,7 @@ export class HeaderComponent{
   }
 
   RouteCheck() {
-    if(this.router.url === '/home'){
+    if(this.router.url === '/'){
       this.navigated = false;
     }
     else{

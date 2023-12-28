@@ -1,0 +1,32 @@
+<div class="featured-container">
+  <div class="header-container">
+    <img class="header-banner" src="/assets/svg/home-section-break.svg">
+    <div class="header-text">
+      Featured
+    </div>
+  </div>
+  <div class="carousel">
+    <div class="plants-container"  [style.transform]="getTransform()">
+      <div *ngFor="let plant of featuredPlants; let i = index"
+           [class.center]="i === currentIndex"
+           [class.off-center]="i !== currentIndex"
+           (click)="onSelectPlant(i)"
+           >
+           <button class="plant-card">
+            <img class="detail-image"src="assets/images/{{ plant.image }}.png">
+            <div class="detail-text">
+              <span class="detail-name">{{ plant.plant_name }}</span><br>
+              <span class="detail-family-name">{{ plant.family_name }}</span><br>
+              <span class="detail-price">${{ plant.price }}/oz</span>
+            </div>
+          </button>
+      </div>
+    </div>
+    <svg class="left-button" (click)="buttonLeft()" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 25 25">
+      <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+    </svg>
+    <svg class="right-button" (click)="buttonRight()" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 25 25">
+      <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+    </svg>
+  </div>
+</div>

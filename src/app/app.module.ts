@@ -8,16 +8,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListPlantsComponent } from './list-plants/list-plants.component';
 import { DisplayPlantComponent } from './display-plant/display-plant.component';
-import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeImageGridComponent } from './home-image-grid/home-image-grid.component';
+import { HomeFeaturedDisplayComponent } from './home-featured-display/home-featured-display.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListPlantsComponent,
     DisplayPlantComponent,
-    HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeImageGridComponent,
+    HomeFeaturedDisplayComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,

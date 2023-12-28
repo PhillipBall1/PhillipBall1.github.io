@@ -1,18 +1,5 @@
-body, html {
-  --text-color: #ffffff;
-  --cw-1: #ffeaa7;
-  --cw-2: #5d744c;
-  --cw-3: #000000;
 
-  --fs-xl: clamp(1rem, 2vw + 1rem, 2rem);
-  --fs-md: clamp(1rem, 2vw + 1rem, 1.5rem);
-  --fs-smd: clamp(1rem, 2vw + 1rem, 1.4rem);
-  background-color: var(--cw-3);
-  max-width: 100%;
-  overflow-x: hidden;
 
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 .navbar-toggler{
   background-color: white;
 }
@@ -22,14 +9,14 @@ body, html {
   width: 100%;
 }
 .navbar-custom-bg {
-  background-color: #ffffff00;
+  background-color: none;
 }
 .navbar-custom-bg-2 {
-  background-color: #000000;
+  background-color: var(--cw-3);
 }
 .navbar-custom-text{
   color: white;
-  font-size: var(--fs-smd);
+  font-size: var(--fs-s);
   font-weight: 600;
   transition: 200ms;
   text-shadow: 3px 3px 8px rgb(0, 0, 0);
@@ -39,7 +26,7 @@ body, html {
 }
 .navbar-brand .word{
   color: white;
-  font-size: var(--fs-xl);
+  font-size: var(--fs-s);
   font-weight: 700;
   text-shadow: 3px 3px 8px rgb(0, 0, 0);
 }
@@ -47,13 +34,12 @@ body, html {
 .navbar-brand:hover{
   color: var(--cw-1);
   text-shadow: 3px 3px 8px rgb(83, 83, 83);
-  font-size: 33px;
 }
 
 .navbar-custom-text:hover{
   color: var(--cw-1);
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
-  font-size: var(--fs-md);
+  font-size: var(--fs-s);
 }
 
 @media(max-width: 991px){

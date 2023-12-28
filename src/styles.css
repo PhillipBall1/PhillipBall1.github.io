@@ -1,0 +1,13 @@
+:root{
+  --light-text-color: #ffffff;
+  --dark-text-color: #00060b;
+  --cw-1: #ffeaa7;
+  --cw-2: #5d744c;
+  --cw-3: #00060b;
+  --cw-4: #4f6340;
+  --fs-xl: 3.5rem;
+  --fs-lg: 3rem;
+  --fs-md: 2.5rem;
+  --fs-s:  2rem;
+  --fs-xs: 1.5rem;
+}

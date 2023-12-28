@@ -1,0 +1,115 @@
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | GRID FIRST PICTURES DISPLAY + BOUNDS SETTING             |
+  +----------------------------------------------------------+*/
+  .picture-container{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 10vh);
+    position: relative;
+  }
+  .grid-a, .grid-b, .grid-c{
+    position: relative;
+  }
+  .grid-a {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 11;
+  }
+  .grid-b {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+  }
+  .grid-c {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 11;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | GRID MAIN TEXT OVERLAYS                                  |
+  +----------------------------------------------------------+*/
+  .grid-images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: warpIn 1s ease-in 0s 1 normal both;
+  }
+  .grid-overlay{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 50svw;
+    margin-left: 2svw;
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
+    font-weight: bold;
+    animation: slideInText 0.5s ease-in 0s 1 normal both;
+  }
+  .grid-a{
+    font-size: var(--fs-lg);
+  }
+  .grid-b, .grid-c{
+    font-size: var(--fs-md);
+  }
+  .grid-subtext{
+    font-size: var(--fs-md);
+    cursor: pointer;
+    transition: 200ms;
+    width: 15svw;
+  }
+  .grid-subtext:hover{
+    color: var(--cw-1);
+    margin-left: 1svw;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | ANIMATIONS                                               |
+  +----------------------------------------------------------+*/
+  @keyframes slideInText{
+    from{
+      transform: translate(-70%, -50%);
+      opacity: 0;
+    }
+    to{
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+  @keyframes warpIn{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | SCREEN CHANGES                                           |
+  +----------------------------------------------------------+*/
+  @media(max-width: 1030px){
+
+    /*GRID TEXT CHANGES*/
+    .grid-overlay{
+      left: 50%;
+      top: 30%;
+      width: 100svw;
+    }
+
+    /*GRID BOUNDS CHANGES*/
+    .grid-a {
+      position: relative;
+      grid-column-start: 1;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 11;
+    }
+    .grid-b, .grid-c {
+      opacity: 0;
+    }
+  }
