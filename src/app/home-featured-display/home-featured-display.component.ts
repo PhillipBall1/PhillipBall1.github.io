@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlantsService } from '../service/plants.service';
 import { Plant } from '../models/plants.model';
@@ -9,7 +9,8 @@ import { Plant } from '../models/plants.model';
   styleUrls: ['./home-featured-display.component.css']
 })
 export class HomeFeaturedDisplayComponent {
-
+  @ViewChild('rightButton') rightButton!: ElementRef<SVGElement>;
+  @ViewChild('leftButton') leftButton!: ElementRef<SVGElement>;
   currentIndex = 3;
   featuredPlants: Plant[] = [];
 
@@ -30,26 +31,37 @@ export class HomeFeaturedDisplayComponent {
   }
 
   getTransform() {
-    const cardWidthPx = 25 * 16;
     const viewportWidth = window.innerWidth;
-
     const mobileBreakpoint = 768;
+    let translation = 0;
 
-    if (viewportWidth <= mobileBreakpoint) {
-      let translation = this.currentIndex * -cardWidthPx;
-      return `translateX(${translation}px)`;
-    } else {
-      let translation = (this.currentIndex - 0.75) * -cardWidthPx;
-      return `translateX(${translation}px)`;
-    }
+    if (viewportWidth <= mobileBreakpoint) translation = (this.currentIndex - 1) * -(20 * 16);
+    else translation = (this.currentIndex - 0.75) * -(25 * 16);
+
+    return `translateX(${translation}px)`;
   }
 
   buttonRight(){
-    if(this.featuredPlants.length == this.currentIndex) return;
-    this.onSelectPlant(this.currentIndex + 1);
+    const index = this.currentIndex + 1;
+    const leftButton = this.leftButton.nativeElement;
+    const rightButton = this.rightButton.nativeElement;
+
+    leftButton.style.opacity = "1";
+
+    if(this.featuredPlants.length != index) this.onSelectPlant(index);
+
+    if(this.featuredPlants.length == index + 1) rightButton.style.opacity = "0";
   }
   buttonLeft(){
-    if(this.currentIndex == 0) return;
-    this.onSelectPlant(this.currentIndex - 1);
+    const index = this.currentIndex - 1;
+    const leftButton = this.leftButton.nativeElement;
+    const rightButton = this.rightButton.nativeElement;
+
+    rightButton.style.opacity = "1";
+
+    if(this.currentIndex >= 1) this.onSelectPlant(index);
+
+    if(this.currentIndex == 0) leftButton.style.opacity = "0";
+
   }
 }

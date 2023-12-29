@@ -1,6 +1,6 @@
 /*=========================================================================================================================================
   +----------------------------------------------------------+
-  | GRID FIRST PICTURES DISPLAY + BOUNDS SETTING             |
+  | GRID BOUNDS SETTING                                      |
   +----------------------------------------------------------+*/
   .picture-container{
     display: grid;
@@ -31,7 +31,7 @@
   }
 /*=========================================================================================================================================
   +----------------------------------------------------------+
-  | GRID MAIN TEXT OVERLAYS                                  |
+  | IMAGES / TEXT OVERLAYS ONTO GRID                         |
   +----------------------------------------------------------+*/
   .grid-images {
     width: 100%;
@@ -42,9 +42,10 @@
   .grid-overlay{
     position: absolute;
     left: 50%;
-    top: 40%;
-    width: 50svw;
-    margin-left: 2svw;
+    top: 20%;
+    width: 90%;
+    text-align: center;
+    transform: translate(50%, 0%);
     color: var(--light-text-color);
     text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
     font-weight: bold;
@@ -60,11 +61,12 @@
     font-size: var(--fs-md);
     cursor: pointer;
     transition: 200ms;
-    width: 15svw;
+    transform: translate(100%, 0%);
+    width: 33%;
   }
   .grid-subtext:hover{
     color: var(--cw-1);
-    margin-left: 1svw;
+    transform: scaleY(1);
   }
 /*=========================================================================================================================================
   +----------------------------------------------------------+
@@ -93,7 +95,6 @@
   | SCREEN CHANGES                                           |
   +----------------------------------------------------------+*/
   @media(max-width: 1030px){
-
     /*GRID TEXT CHANGES*/
     .grid-overlay{
       left: 50%;
@@ -112,4 +113,59 @@
     .grid-b, .grid-c {
       opacity: 0;
     }
+  }
+
+  .cta{
+    position: relative;
+    margin: auto;
+    padding: 19px 22px;
+    transition: all .2s ease;
+  }
+
+  .cta::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: rgba(var(--cw-1),.5);
+    width: 56px;
+    height: 56px;
+    transition: all .3s ease;
+  }
+  span{
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  svg{
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--cw-2);
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all .3s ease;
+  }
+
+  svg:hover::before{
+    width: 100%;
+    background: rgba(var(--cw-1),1);
+  }
+
+  svg:hover{
+    transform: translateX(0);
+  }
+
+  svg:active{
+    transform: scale(.96);
   }

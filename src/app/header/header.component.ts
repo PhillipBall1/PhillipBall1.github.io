@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import {NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +19,7 @@ export class HeaderComponent{
   }
 
   RouteCheck() {
-    if(this.router.url === '/'){
+    if(this.router.url === '/home'){
       this.navigated = false;
     }
     else{

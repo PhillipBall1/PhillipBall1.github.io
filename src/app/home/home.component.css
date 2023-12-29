@@ -13,18 +13,20 @@
     --fs-lg: 3rem;
     --fs-md: 2.5rem;
     --fs-s:  2rem;
-    --fs-xs: 1.5rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fs-xs: 1rem;
+    font-family:"Clarkson",Helvetica,sans-serif;
     background-color: var(--cw-3);
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
     height: 100svh;
+    scroll-snap-type: y proximity;
   }
   section{
-    min-height: 100svh;
+
     width: 100svw;
+    scroll-snap-align: start;
   }
 
   @media(max-width: 600px){

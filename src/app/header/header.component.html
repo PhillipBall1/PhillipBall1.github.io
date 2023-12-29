@@ -1,11 +1,11 @@
 <body class="page">
-  <div *ngIf="navigated">
-    <nav class="navbar navbar-expand-lg navbar-custom-bg-2" style="position: relative;">
+  <div *ngIf="navigated == true">
+    <nav class="navbar navbar-expand-lg navbar-custom-bg" style="position: fixed;">
       <div class="container-fluid">
         <a class="navbar-brand" routerLink="/">
           <div class="word">
-            <img src="/assets/images/Ico.png" alt="Logo" width="40vh" height="40vh">
-            The Leaf Lounge
+            <img src="/assets/images/Ico.png" alt="Logo" width="60rem" height="60rem">
+            THE LEAF LOUNGE
           </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,21 +13,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <button class="nav-link navbar-custom-text" routerLink="/plants">Shop</button>
-            <button class="nav-link navbar-custom-text" href="#">About</button>
-            <button class="nav-link navbar-custom-text" href="#">Contact</button>
+            <button class="nav-link navbar-custom-text" routerLink="/plants">SHOP ALL</button>
+            <button class="nav-link navbar-custom-text" href="#">ABOUT</button>
+            <button class="nav-link navbar-custom-text" href="#">LOG IN</button>
           </div>
         </div>
       </div>
     </nav>
   </div>
-  <div *ngIf="!navigated">
-    <nav class="navbar navbar-expand-lg navbar-custom-bg" style="position: fixed;">
+  <div *ngIf="navigated == false">
+    <nav class="navbar navbar-expand-lg navbar-custom-bg2" style="position: relative;">
       <div class="container-fluid">
         <a class="navbar-brand" routerLink="/">
           <div class="word">
-            <img src="/assets/images/Ico.png" alt="Logo" width="40vh" height="40vh">
-            The Leaf Lounge
+            <img src="/assets/images/Ico.png" alt="Logo" width="60rem" height="60rem">
+            THE LEAF LOUNGE
           </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,9 +35,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <button class="nav-link navbar-custom-text" routerLink="/plants">Shop</button>
-            <button class="nav-link navbar-custom-text" href="#">About</button>
-            <button class="nav-link navbar-custom-text" href="#">Contact</button>
+            <button class="nav-link navbar-custom-text" routerLink="/plants">SHOP ALL</button>
+            <button class="nav-link navbar-custom-text" href="#">ABOUT</button>
+            <button class="nav-link navbar-custom-text" href="#">LOG IN</button>
           </div>
         </div>
       </div>
