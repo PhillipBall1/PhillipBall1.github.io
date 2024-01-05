@@ -1,15 +1,15 @@
 <div class="featured-container">
   <div class="header-container">
     <div class="header-text">
-      Plants that stand out
+      {{header}}
     </div>
     <div class="footer-text">
-      Top-tier selection of our most beloved plants
+      {{ phrase }}
     </div>
   </div>
   <div class="carousel">
     <div class="plants-container"  [style.transform]="getTransform()">
-      <div *ngFor="let plant of featuredPlants; let i = index"
+      <div *ngFor="let plant of plantsArr; let i = index"
            [class.center]="i === currentIndex"
            [class.off-center]="i !== currentIndex"
            (click)="onSelectPlant(i)"
@@ -19,7 +19,7 @@
             <div class="text-container">
               <span class="detail-name">{{ plant.plant_name }}</span><br>
               <span class="detail-family-name">{{ plant.family_name }}</span><br>
-              <span class="detail-price">${{ plant.price }}/oz</span>
+              <span class="detail-price">${{ plant.price }}</span>
             </div>
           </button>
       </div>
@@ -31,5 +31,4 @@
       <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
     </svg>
   </div>
-
 </div>

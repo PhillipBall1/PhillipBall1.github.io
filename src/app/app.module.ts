@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeImageGridComponent } from './home-image-grid/home-image-grid.component';
 import { HomeFeaturedDisplayComponent } from './home-featured-display/home-featured-display.component';
 import { HomeComponent } from './home/home.component';
+import { ModifyPlantsComponent } from './modify-plants/modify-plants.component';
+import { CreatePlantComponent } from './create-plant/create-plant.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     HomeImageGridComponent,
     HomeFeaturedDisplayComponent,
-    HomeComponent
+    HomeComponent,
+    ModifyPlantsComponent,
+    CreatePlantComponent,
   ],
   imports: [
     AppRoutingModule,

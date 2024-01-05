@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -6,20 +6,24 @@ import {NavigationEnd, Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent{
+export class HeaderComponent implements OnInit{
 
   navigated = false;
+  admin = true;
 
   constructor(private router: Router) {
-    router.events.subscribe((val) => {
-        if(val instanceof NavigationEnd){
-          this.RouteCheck();
-        }
+    this.router.events.subscribe((val) => {
+      if(val instanceof NavigationEnd){
+        this.RouteCheck();
+      }
     });
+  }
+  ngOnInit(){
+    this.RouteCheck();
   }
 
   RouteCheck() {
-    if(this.router.url === '/home'){
+    if(this.router.url != '/'){
       this.navigated = false;
     }
     else{

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Plant } from '../models/plants.model';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-display-plant',
@@ -11,7 +10,7 @@ import { AppComponent } from '../app.component';
 export class DisplayPlantComponent implements OnInit {
   plant: Plant;
 
-  constructor(private app: AppComponent, private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
     this.plant = {} as Plant;
   }
 

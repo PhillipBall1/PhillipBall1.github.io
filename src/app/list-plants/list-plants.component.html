@@ -1,12 +1,6 @@
 <body *ngIf="selectedPlant == null">
   <app-header></app-header>
   <div class="main-container">
-
-    <div class="search-side-bar">
-      <div class="search-content">
-
-      </div>
-    </div>
     <div class="plant-list-container" >
       <div class="plant-cards-container">
         <button class="plant-card" *ngFor="let plant of plants" (click)="onSelectPlant(plant)">
@@ -14,12 +8,8 @@
           <div class="detail-text">
             <div class="text-container">
               <span class="detail-name">{{ plant.plant_name }}</span>
-            </div>
-            <div class="text-container">
               <span class="detail-family-name">{{ plant.family_name }}</span>
-            </div>
-            <div class="text-container">
-              <span class="detail-price">${{ plant.price }}/oz</span>
+              <span class="detail-price">${{ plant.price }}</span>
             </div>
           </div>
         </button>

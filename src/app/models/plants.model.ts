@@ -1,16 +1,18 @@
 import { ObjectId } from "mongodb";
 
 export class Plant {
-  constructor(
-    public plant_name: string,
-    public family_name: string,
-    public scientific_name: string,
-    public plant_description: string,
-    public image: string,
-    public price: number,
-    public featured: boolean,
-    public id?: ObjectId
-    ) {}
+  [key: string]: any;
+  plant_name: string = '';
+  family_name: string = '';
+  scientific_name: string = '';
+  plant_description: string = '';
+  image: string = '';
+  price: number = 0;
+  difficulty: number = 0;
+  featured: boolean = false;
+  indoor: boolean = false;
+  edible: boolean = false;
+  _id?: ObjectId;
 
   get plantName(): string { return this.plant_name }
   set plantName(plant_name: string) { this.plant_name = plant_name; }
@@ -30,6 +32,19 @@ export class Plant {
   get plantPrice(): number { return this.price }
   set plantPrice(price: number) { this.price = price; }
 
+  get plantDifficulty(): number { return this.difficulty }
+  set plantDifficulty(difficulty: number) { this.difficulty = difficulty; }
+
   get plantFeatured() : boolean { return this.featured }
   set plantFeatured(featured: boolean) { this.featured = featured }
+
+  get plantEdible() : boolean { return this.edible }
+  set plantEdible(edible: boolean) { this.edible = edible }
+
+  get plantIndoor() : boolean { return this.indoor }
+  set plantIndoor(indoor: boolean) { this.indoor = indoor }
+
+
+
+
 }

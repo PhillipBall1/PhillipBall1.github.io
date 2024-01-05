@@ -25,6 +25,22 @@ export class PlantsService {
       });
     }
 
+    public getIndoorPlants(callback: (plants: Plant[]) => void): void {
+      let request = this.host + '/indoor-plants';
+
+      this.http.get<Plant[]>(request).subscribe((plants: Plant[]) => {
+        callback(plants);
+      });
+    }
+
+    public getEdiblePlants(callback: (plants: Plant[]) => void): void {
+      let request = this.host + '/edible-plants';
+
+      this.http.get<Plant[]>(request).subscribe((plants: Plant[]) => {
+        callback(plants);
+      });
+    }
+
     public getPlantByID(id: ObjectId, callback: (plant: Plant) => void): void {
       let request = this.host + `/plants/${id}`;
 

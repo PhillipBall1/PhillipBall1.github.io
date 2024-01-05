@@ -4,6 +4,12 @@
     <app-home-image-grid></app-home-image-grid>
   </section>
   <section>
-    <app-home-featured-display></app-home-featured-display>
+    <app-home-featured-display [plantsArr]="featuredPlants" [header]="featuredHeader" [phrase]="featuredPhrase"></app-home-featured-display>
+  </section>
+  <section>
+    <app-home-featured-display [plantsArr]="indoorPlants" [header]="indoorHeader" [phrase]="indoorPhrase"></app-home-featured-display>
+  </section>
+  <section>
+    <app-home-featured-display [plantsArr]="ediblePlants" [header]="edibleHeader" [phrase]="ediblePhrase"></app-home-featured-display>
   </section>
 </body>

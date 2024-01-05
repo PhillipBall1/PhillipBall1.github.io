@@ -1,6 +1,5 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { PlantsService } from '../service/plants.service';
 import { Plant } from '../models/plants.model';
 
 @Component({
@@ -11,20 +10,17 @@ import { Plant } from '../models/plants.model';
 export class HomeFeaturedDisplayComponent {
   @ViewChild('rightButton') rightButton!: ElementRef<SVGElement>;
   @ViewChild('leftButton') leftButton!: ElementRef<SVGElement>;
-  currentIndex = 3;
-  featuredPlants: Plant[] = [];
 
-  constructor(private router: Router, private service: PlantsService){}
+  currentIndex = 2;
+  @Input() plantsArr: Plant[] = [];
+  @Input() header: String = "";
+  @Input() phrase: String = "";
 
-  ngOnInit() {
-    this.service.getFeaturedPlants((plants: Plant[]) => {
-      this.featuredPlants = plants;
-    });
-  }
+  constructor(private router: Router){}
 
   onSelectPlant(index: number){
-    const selectedPlant = this.featuredPlants[index];
-    if(selectedPlant === this.featuredPlants[this.currentIndex]){
+    const selectedPlant = this.plantsArr[index];
+    if(selectedPlant === this.plantsArr[this.currentIndex]){
       this.router.navigate(['display-plant'], { queryParams: { plant: JSON.stringify(selectedPlant) } });
     }
     this.currentIndex = index;
@@ -48,9 +44,9 @@ export class HomeFeaturedDisplayComponent {
 
     leftButton.style.opacity = "1";
 
-    if(this.featuredPlants.length != index) this.onSelectPlant(index);
+    if(this.plantsArr.length != index) this.onSelectPlant(index);
 
-    if(this.featuredPlants.length == index + 1) rightButton.style.opacity = "0";
+    if(this.plantsArr.length == index + 1) rightButton.style.opacity = "0";
   }
   buttonLeft(){
     const index = this.currentIndex - 1;

@@ -1,0 +1,47 @@
+<body>
+  <app-header></app-header>
+  <div class="content-container">
+    <section class="create-plant-container">
+      <app-create-plant [plant]="plantToUpdate"></app-create-plant>
+    </section>
+    <section class="plant-list-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Family</th>
+            <th>Genus</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Difficulty</th>
+            <th>Featured</th>
+            <th>Indoor</th>
+            <th>Edible</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plant of plants">
+            <td>{{ plant.plant_name }}</td>
+            <td>{{ plant.family_name }}</td>
+            <td>{{ plant.scientific_name }}</td>
+            <td>{{ plant.plant_description }}</td>
+            <td>{{ plant.image }}</td>
+            <td>{{ plant.price }}</td>
+            <td>{{ plant.difficulty }}</td>
+            <td>{{ plant.featured }}</td>
+            <td>{{ plant.indoor }}</td>
+            <td>{{ plant.edible }}</td>
+            <td>
+              <button (click)="onSelectPlant(plant)">Update</button>
+              <button (click)="onDeletePlant(plant)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+
+  </div>
+</body>

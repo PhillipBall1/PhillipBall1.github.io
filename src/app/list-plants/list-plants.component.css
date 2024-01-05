@@ -1,88 +1,83 @@
-* {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | MAIN BODY VARIABLES + BOUNDS SETTINGS                    |
+  +----------------------------------------------------------+*/
+  body {
+    --light-text-color: #ffffff;
+    --dark-text-color: #00060b;
+    --cw-1: #ffeaa7;
+    --cw-2: #5d744c;
+    --cw-3: #00060b;
+    --cw-4: #5d744c;
+    --fs-xl: 3.5rem;
+    --fs-lg: 3rem;
+    --fs-md: 2.5rem;
+    --fs-s:  2rem;
+    --fs-xs: 1rem;
+    font-family:"Clarkson",Helvetica,sans-serif;
+    background-color: var(--light-text-color);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 
-body{
-  --border-bg-color: #ffffff;
-  --background-color:#000000;
-  --background-color-dark:#030f0a;
-  --background-color-light:#030f0a;
-  --text-color: #535353;
-  --text-color-dark: #323232;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | CONTAINERS                                               |
+  +----------------------------------------------------------+*/
+  .main-container{
+    display: grid;
+    background-color: var(--cw-1);
+  }
+  .plant-cards-container {
+    margin-left: 3%;
+    margin-right: auto;
+    margin-top: 1%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 340px));
+    column-gap: 0.8vw;
+    row-gap: 0.9vw;
 
-.main-container{
-  display: grid;
-  grid-template-columns: 15% 85%;
-}
-
-.search-side-bar{
-  width: 100%;
-  height: 100%;
-  margin-top: 5.6%;
-  margin-left: 7%;
-  background-color: #999999;
-
-}
-
-.plant-cards-container {
-  margin-left: 3%;
-  margin-right: auto;
-  margin-top: 1%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10px, 290px));
-  column-gap: 0.8vw;
-  row-gap: 0.9vw;
-
-}
-
-.plant-card {
-  border-style: none;
-  position: relative;
-  height: 100%;
-  transition: 0.3s;
-  font-weight: bold;
-  color: var(--text-color);
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
-}
-
-.plant-card:hover {
-  box-shadow: 6px 6px 8px 2px rgba(0,0,0,0.5);
-}
-
-.detail-price{
-  font-weight: 600;
-  font-size: 1em;
-}
-
-.detail-image{
-  background-color: var(--background-color);
-  width: 100%;
-}
-
-.detail-text{
-  height: 15vh;
-}
-
-.text-container{
-  text-align: left;
-
-}
-
-.detail-name{
-  font-weight: 400;
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-
-.detail-family-name{
-  width: 20%;
-  margin: 0 auto;
-  font-size: 1em;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #999999;
-}
-
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | CARDS                                                    |
+  +----------------------------------------------------------+*/
+  .plant-card {
+    border-style: none;
+    position: relative;
+    height: 100%;
+    transition: 0.3s;
+    font-weight: bold;
+    color:  var(--dark-text-color);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+    background-color: var(--cw-4);
+  }
+  .plant-card:hover {
+    box-shadow: 6px 6px 8px 2px rgba(0,0,0,0.5);
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | CARD DETAILS                                             |
+  +----------------------------------------------------------+*/
+  .detail-image{
+    background-color: var(--cw-3);
+    width: 100%;
+  }
+  .detail-text{
+    height: 15vh;
+    text-align: left;
+  }
+  .detail-name{
+    font-size: var(--fs-s);
+    text-transform: uppercase;
+  }
+  .detail-family-name{
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    color: #a3a3a3;
+  }
+  .detail-price{
+    font-size: var(--fs-xs);
+  }

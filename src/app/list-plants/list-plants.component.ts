@@ -15,11 +15,9 @@ export class ListPlantsComponent implements OnInit{
   plants: Plant[] = [];
   selectedPlant: Plant | null = null;
 
-	constructor(private service: PlantsService, private router: Router) {
-   }
+	constructor(private service: PlantsService, private router: Router) {}
 
 	ngOnInit() {
-    console.log("Getting data....");
 		this.service.getPlants((plants: Plant[]) => {
       this.plants = plants;
       console.log(plants);
@@ -29,7 +27,6 @@ export class ListPlantsComponent implements OnInit{
 
   onSelectPlant(selectedPlant: Plant){
     this.selectedPlant = selectedPlant;
-    console.log("User selected" + selectedPlant.plant_name);
     this.router.navigate(['display-plant'], { queryParams: { plant: JSON.stringify(selectedPlant) } });
   }
 }
