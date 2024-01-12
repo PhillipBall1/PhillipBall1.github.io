@@ -54,3 +54,12 @@ While this project demonstrates my current position as a software engineer, it p
 |12/13/23| Started production of The Leaf Lounge, made a few components such as 'list-plants', a model for my plant objects, and a plant service to make requests to my API. Small changes to my home page as well. |555|493|
 
 
+### To-Do
+
+|Do|Reason|
+|--|--|
+|Add Caching| After the last push and plenty of work put behind it, I realize that the website loading of the database and the images are extremely slow|
+|Fix Shop Button| Homepage shop button doesn't work, will have that fixed in next push|
+|Checkout| Will be adding a checkout soon for the cart|
+|Navbar Opacity| The navbar doesn't seem to want to be opaque anymore, even though on localhost testing it was|
+|Nav links| Some links are showing improperly and some not at all|
