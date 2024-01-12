@@ -1,0 +1,92 @@
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | CONTAINER                                                |
+  +----------------------------------------------------------+*/
+  .register-container {
+    width: 30rem;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid var(--cw-1);
+    border-radius: 1rem;
+    font-size: var(--fs-md);
+    color: white;
+    background-color: var(--cw-3);
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | INPUTS/LABELS                                            |
+  +----------------------------------------------------------+*/
+  .label {
+    font-size: var(--fs-xs);
+    display: block;
+  }
+  .input{
+    font-size: var(--fs-xs);
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .register-link{
+    font-size: var(--fs-xs);
+    text-align: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: rgb(38, 79, 104);
+    transition: 0.5s;
+  }
+  .register-link:hover{
+    color: rgb(59, 107, 138);
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | BUTTON                                                   |
+  +----------------------------------------------------------+*/
+  .submit-button {
+    font-size: var(--fs-xs);
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: var(--cw-2);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .submit-button:hover {
+    background-color: #245819;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | ERROR MESSAGES                                           |
+  +----------------------------------------------------------+*/
+  .error-message {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: var(--fs-xs);
+    color: red;
+  }
+  .password-strength-weak {
+    color: red;
+    font-size: var(--fs-xxs);
+  }
+  .password-strength-medium {
+    color: orange;
+    font-size: var(--fs-xxs);
+  }
+  .password-strength-strong {
+    color: green;
+    font-size: var(--fs-xxs);
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | MEDIA                                                    |
+  +----------------------------------------------------------+*/
+  @media (max-width: 768px) {
+    .register-container {
+      width: 90%;
+      padding: 0.5rem;
+    }
+  }

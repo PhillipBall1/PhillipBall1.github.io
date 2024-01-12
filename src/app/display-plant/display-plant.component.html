@@ -1,24 +1,19 @@
-<app-header></app-header>
-<body *ngIf="plant">
-  <div class="card-container">
+<body class="display-background">
+  <app-header></app-header>
+  <div *ngIf="plant" class="card-container">
     <div class="image-container">
-      <img class="image" src="assets/images/{{ plant.image }}.png">
+      <img class="plant-image" src="assets/images/{{ plant.image }}.png" alt="{{ plant.plant_name }}">
     </div>
-    <div class="text-container">
-      <div class="detail-plant-name">
-        {{ plant.plant_name }}
-      </div>
-      <div class="detail-scientific-name">
-        {{ plant.scientific_name }}
-      </div>
-      <div class="detail-family-name">
-        {{ plant.family_name }}
-      </div>
-      <div class="detail-plant-description">
-        {{ plant.plant_description }}
-      </div>
-      <div class="detail-price">
-        {{ plant.price }}
+    <div class="details-container">
+      <div class="plant-name">{{ plant.plant_name }}</div>
+      <div class="scientific-name">{{ plant.scientific_name }} || {{ plant.family_name }}</div>
+      <div class="description">{{ plant.plant_description }}</div>
+      <div class="price">${{ overallPrice}}</div>
+      <div class="cart-actions">
+        <button class="quantity-btn" (click)="decreaseQuantity()">-</button>
+        <div class="quantity-display">{{ amountToAdd }}</div>
+        <button class="quantity-btn" (click)="increaseQuantity()">+</button>
+        <button class="add-to-cart-btn" (click)="addToCart(plant, amountToAdd)">Add to Cart</button>
       </div>
     </div>
   </div>

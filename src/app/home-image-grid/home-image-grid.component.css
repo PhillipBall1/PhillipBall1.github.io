@@ -8,27 +8,16 @@
     grid-template-rows: repeat(10, 10vh);
     position: relative;
   }
-  .grid-a, .grid-b, .grid-c{
+  .grid-a{
     position: relative;
   }
   .grid-a {
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 9;
     grid-row-start: 1;
     grid-row-end: 11;
   }
-  .grid-b {
-    grid-column-start: 5;
-    grid-column-end: 9;
-    grid-row-start: 1;
-    grid-row-end: 6;
-  }
-  .grid-c {
-    grid-column-start: 5;
-    grid-column-end: 9;
-    grid-row-start: 6;
-    grid-row-end: 11;
-  }
+
 /*=========================================================================================================================================
   +----------------------------------------------------------+
   | IMAGES / TEXT OVERLAYS ONTO GRID                         |
@@ -37,12 +26,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: warpIn 1s ease-in 0s 1 normal both;
+
   }
   .grid-overlay{
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 50%;
     width: 90%;
     text-align: center;
     transform: translate(50%, 0%);
@@ -50,12 +39,14 @@
     text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
     font-weight: bold;
     animation: slideInText 0.5s ease-in 0s 1 normal both;
+    font-size: var(--fs-xl);
   }
   .grid-a{
-    font-size: var(--fs-lg);
-  }
-  .grid-b, .grid-c{
-    font-size: var(--fs-md);
+    animation: warpIn 1s ease-in 0s 1 normal both;
+    background: url('/assets/images/homepage.png') no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
   }
   .grid-subtext{
     font-size: var(--fs-md);
@@ -125,8 +116,5 @@
       grid-column-end: 9;
       grid-row-start: 1;
       grid-row-end: 11;
-    }
-    .grid-b, .grid-c {
-      opacity: 0;
     }
   }

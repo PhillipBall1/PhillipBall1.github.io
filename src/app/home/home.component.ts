@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PlantsService } from '../service/plants.service';
-import { Plant } from '../models/plants.model';
-import { firstValueFrom } from 'rxjs';
+import { PlantsService } from '../core-service/plants.service';
+import { Plant } from '../core-models/plants.model';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +8,6 @@ import { firstValueFrom } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-
-  constructor(private service: PlantsService){}
 
   featuredPlants!: Plant[];
   featuredHeader: String = "Plants that Stand Out";
@@ -22,24 +19,71 @@ export class HomeComponent implements OnInit{
 
   ediblePlants!: Plant[];
   edibleHeader: String = "Safe for Everyone";
-  ediblePhrase: String = "This collection of plants are edible to help with hungry pets";
+  ediblePhrase: String = "This collection of plants are edible incase of a hungry pet";
 
+  /**
+   * Constructs the HomeComponent and injects the PlantsService.
+   * @param service - The PlantsService for fetching plant data.
+   */
+  constructor(private service: PlantsService){}
+
+  /**
+   * OnInit lifecycle hook that initializes the component.
+   * Fetches featured plants and, upon successful retrieval, proceeds to load indoor and edible plants.
+   */
   ngOnInit(){
-    this.service.getFeaturedPlants((featuredPlants: Plant[]) => {
-      this.featuredPlants = featuredPlants;
-      this.loadIndoorPlants();
-    });
+    this.loadFeaturedPlants();
   }
-  private loadIndoorPlants() {
-    this.service.getIndoorPlants((indoorPlants: Plant[]) => {
-      this.indoorPlants = indoorPlants;
-      this.loadEdiblePlants();
+
+  /**
+   * Fetches featured plants from the PlantsService.
+   * Sets up the sequence to load indoor and edible plants upon successful retrieval.
+   */
+  private loadFeaturedPlants() {
+    this.service.getFeaturedPlants().subscribe({
+      next: (featuredPlants: Plant[]) => {
+        this.featuredPlants = featuredPlants;
+        this.loadIndoorPlants();
+      },
+      error: (error) => console.error('Error fetching featured plants:', error),
+      complete: () => console.log('Featured plants fetch completed')
     });
   }
 
+  /**
+   * Fetches indoor plants from the PlantsService.
+   * Calls to load edible plants upon successful retrieval.
+   */
+  private loadIndoorPlants() {
+    this.service.getIndoorPlants().subscribe({
+      next: (indoorPlants: Plant[]) => {
+        this.indoorPlants = indoorPlants;
+        this.loadEdiblePlants();
+      },
+      error: (error) => {
+        console.error('Error fetching indoor plants:', error);
+      },
+      complete: () => {
+        console.log('Indoor plants fetch completed');
+      }
+    });
+  }
+
+  /**
+   * Fetches edible plants from the PlantsService.
+   * This is the final step in the plant data loading sequence.
+   */
   private loadEdiblePlants() {
-    this.service.getEdiblePlants((ediblePlants: Plant[]) => {
-      this.ediblePlants = ediblePlants;
+    this.service.getEdiblePlants().subscribe({
+      next: (ediblePlants: Plant[]) => {
+        this.ediblePlants = ediblePlants;
+      },
+      error: (error) => {
+        console.error('Error fetching edible plants:', error);
+      },
+      complete: () => {
+        console.log('Edible plants fetch completed');
+      }
     });
   }
 }

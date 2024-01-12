@@ -1,0 +1,68 @@
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | MAIN BODY VARIABLES + BOUNDS SETTINGS                    |
+  +----------------------------------------------------------+*/
+  body {
+    --light-text-color: #ffffff;
+    --dark-text-color: #00060b;
+    --cw-1: #ffeaa7;
+    --cw-2: #5d744c;
+    --cw-3: #00060b;
+    --cw-4: #98b6f3;
+    --cw-5: rgb(218, 148, 148);
+    --fs-xl: 3.5rem;
+    --fs-lg: 3rem;
+    --fs-md: 2.5rem;
+    --fs-s:  2rem;
+    --fs-xs: 1rem;
+    font-family:"Clarkson",Helvetica,sans-serif;
+    background-color: #00060b;
+    font-weight: 700;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | CONTAINERS                                               |
+  +----------------------------------------------------------+*/
+  .content-container {
+    justify-content: space-between;
+
+  }
+  .create-plant-container {
+    flex: 5;
+  }
+  .plant-list-container {
+    overflow-x: auto;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | TABLE CSS FOR DATABASE DISPLAY                           |
+  +----------------------------------------------------------+*/
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #202020;
+    padding: 0.5rem;
+    max-width: 15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--light-text-color);
+  }
+  th {
+    background-color: #818181;
+    text-align: left;
+  }
+  td button{
+    font-weight: 700;
+
+    color: var(--light-text-color);
+  }
+  .update{
+    background-color: #042907;
+  }
+
+  .delete{
+    background-color: #290a04;
+  }

@@ -1,0 +1,149 @@
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | MAIN BODY VARIABLES + BOUNDS SETTINGS                    |
+  +----------------------------------------------------------+*/
+  body {
+    --light-text-color: #ffffff;
+    --dark-text-color: #00060b;
+    --cw-1: #ffeaa7;
+    --cw-2: #5d744c;
+    --cw-3: #00060b;
+    --cw-4: #5d744c;
+    --fs-xl: 3.5rem;
+    --fs-lg: 3rem;
+    --fs-md: 2.5rem;
+    --fs-s:  2rem;
+    --fs-xs: 1.5rem;
+    font-family:"Clarkson",Helvetica,sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100svh;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | CONTAINERS                                               |
+  +----------------------------------------------------------+*/
+  .display-background{
+    background-image: url('/assets/svg/display-plant-bg.svg');
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
+  .card-container {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .image-container {
+    flex: 1;
+    overflow: hidden;
+    background-color: var(--cw-3);
+  }
+  .details-container {
+    flex: 2;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #00060b;
+    border: 1px solid var(--cw-1);
+    border-radius: 1rem;
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | IMAGE/TEXT                                               |
+  +----------------------------------------------------------+*/
+  .plant-image {
+    width: 100%;
+    object-fit: scale-down;
+  }
+  .plant-name {
+    font-size: var(--fs-lg);
+    color: var(--light-text-color);
+  }
+  .description{
+    font-size: var(--fs-xs);
+    color:  var(--light-text-color);
+  }
+  .price, .scientific-name, .family-name {
+    font-size: var(--fs-s);
+    color:  var(--light-text-color);
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | CART/QUANTITY                                            |
+  +----------------------------------------------------------+*/
+  .cart-actions {
+    display: flex;
+    align-items: center;
+  }
+  .quantity-input {
+    width: 2.5rem;
+    margin-right: 1rem;
+    padding: 0rem;
+    border: 1px solid var(--cw-2);
+    border-radius: 4px;
+    font-size: var(--fs-s);
+  }
+  .quantity-btn {
+    font-size: var(--fs-s);
+    padding: 0.5rem;
+    margin: 0 5px;
+    background-color: var(--cw-2);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .quantity-btn:hover {
+    background-color: var(--cw-1);
+  }
+  .quantity-display {
+    font-size: var(--fs-s);
+    color: var(--light-text-color);
+    padding: 5px 10px;
+  }
+  .add-to-cart-btn {
+    padding: 0.5rem;
+    font-size: var(--fs-s);
+    background-color: var(--cw-2);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .add-to-cart-btn:hover {
+    background-color: var(--cw-1);
+  }
+/*=========================================================================================================================================
+  +----------------------------------------------------------+
+  | MEDIA                                                    |
+  +----------------------------------------------------------+*/
+  @media(max-width: 800px){
+
+    body {
+      --fs-xl: 3.5rem;
+      --fs-lg: 2.8rem;
+      --fs-md: 2.3rem;
+      --fs-s: 1.7rem;
+      --fs-xs: 1rem;
+    }
+  }
+  @media(max-width: 400px){
+    .card-container {
+      flex-direction: column;
+    }
+
+    body {
+      --fs-xl: 3rem;
+      --fs-lg: 2.5rem;
+      --fs-md: 2rem;
+      --fs-s: 1.5rem;
+      --fs-xs: 0.75rem;
+    }
+  }

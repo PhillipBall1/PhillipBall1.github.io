@@ -1,0 +1,5 @@
+<body class="user-background">
+  <app-header></app-header>
+  <app-user-create *ngIf="noAccount" [@slideFadeInOut]></app-user-create>
+  <app-user-login *ngIf="!noAccount" [@slideFadeInOut]></app-user-login>
+</body>

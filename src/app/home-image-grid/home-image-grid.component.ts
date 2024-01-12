@@ -7,9 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-image-grid.component.css']
 })
 export class HomeImageGridComponent {
-  constructor(private router: Router){
 
-  }
+  /**
+   * @param router - Angular component to navigate
+   */
+  constructor(private router: Router){}
+
+  /**
+   * The Shop button on the homepage references this call to the navigation
+   */
   public displayPlants(){
     this.router.navigate(["plants"]);
   }

@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Plant } from '../models/plants.model';
+import { Plant } from '../core-models/plants.model';
 
 @Component({
   selector: 'app-home-featured-display',
@@ -11,21 +11,31 @@ export class HomeFeaturedDisplayComponent {
   @ViewChild('rightButton') rightButton!: ElementRef<SVGElement>;
   @ViewChild('leftButton') leftButton!: ElementRef<SVGElement>;
 
-  currentIndex = 2;
-  @Input() plantsArr: Plant[] = [];
-  @Input() header: String = "";
-  @Input() phrase: String = "";
+  currentIndex = 2; // Current index for the displayed plant.
+  @Input() plantsArr: Plant[] = []; // Array of plants to be displayed.
+  @Input() header: String = ""; // Header text for the display.
+  @Input() phrase: String = ""; // Descriptive phrase for the display.
 
   constructor(private router: Router){}
 
+  /**
+   * Navigates to the display page of the selected plant.
+   * If the selected plant is the current plant, navigate with query parameters.
+   * @param index - Index of the selected plant in the plantsArr array.
+   */
   onSelectPlant(index: number){
     const selectedPlant = this.plantsArr[index];
     if(selectedPlant === this.plantsArr[this.currentIndex]){
-      this.router.navigate(['display-plant'], { queryParams: { plant: JSON.stringify(selectedPlant) } });
+      this.router.navigate(['display'], { queryParams: { plant: JSON.stringify(selectedPlant) } });
     }
     this.currentIndex = index;
   }
 
+  /**
+   * Calculates the translation for the plant display based on the current index.
+   * Adjusts the translation for different viewport widths.
+   * @returns A string for the CSS translateX property.
+   */
   getTransform() {
     const viewportWidth = window.innerWidth;
     const mobileBreakpoint = 768;
@@ -37,7 +47,12 @@ export class HomeFeaturedDisplayComponent {
     return `translateX(${translation}px)`;
   }
 
+  /**
+   * Handles the right button click to scroll plants display to the right.
+   * Adjusts the visibility of navigation buttons based on the display position.
+   */
   buttonRight(){
+    if(window.innerWidth > 1060) return;
     const index = this.currentIndex + 1;
     const leftButton = this.leftButton.nativeElement;
     const rightButton = this.rightButton.nativeElement;
@@ -48,7 +63,13 @@ export class HomeFeaturedDisplayComponent {
 
     if(this.plantsArr.length == index + 1) rightButton.style.opacity = "0";
   }
+
+  /**
+   * Handles the left button click to scroll plants display to the left.
+   * Adjusts the visibility of navigation buttons based on the display position.
+   */
   buttonLeft(){
+    if(window.innerWidth > 1060) return;
     const index = this.currentIndex - 1;
     const leftButton = this.leftButton.nativeElement;
     const rightButton = this.rightButton.nativeElement;

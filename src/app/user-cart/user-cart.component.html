@@ -1,0 +1,19 @@
+<body class="user-background">
+  <app-header></app-header>
+  <div class="cart-container">
+    Cart
+    <div *ngIf="cartSummary.length === 0">Your cart is empty</div>
+    <div class="cart-item" *ngFor="let item of cartSummary">
+      <img class="item-image" src="assets/images/{{ item.image }}.png" alt="{{ item.name }}">
+      <div class="item-details">
+        <div class="item-name">{{ item.name }}</div>
+        <div class="item-quantity">x{{ item.quantity }}</div>
+      </div>
+      <div class="item-price">${{ item.quantity * item.price | number: '1.2-2' }}</div>
+      <button class="remove-btn" (click)="removeItemFromCart(item.plantId)">Remove</button>
+    </div>
+    <div class="cart-total" *ngIf="cartSummary.length !== 0">
+     Total: ${{ cartTotal }}
+    </div>
+  </div>
+</body>

@@ -1,0 +1,23 @@
+<nav [class]="hideNavBG ? 'navbar navbar-expand-lg navbar-custom-bg' : 'navbar navbar-expand-lg navbar-custom-bg2'"
+     [style.position]="hideNavBG ? 'fixed' : 'relative'">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">
+          <div class="word">
+            <img src="/assets/images/Ico.png" alt="Logo" width="60rem" height="60rem">
+            THE LEAF LOUNGE
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <button class="nav-link navbar-custom-text" routerLink="/shop">SHOP ALL</button>
+            <button class="nav-link navbar-custom-text" routerLink="/cart" *ngIf="loggedIn == true">CART</button>
+            <button class="nav-link navbar-custom-text" routerLink="/modify" *ngIf="admin == true">MODIFY</button>
+            <button class="nav-link navbar-custom-text" routerLink="/login" *ngIf="loggedIn == false">LOG IN</button>
+            <button class="nav-link navbar-custom-text" (click)="logout()" *ngIf="loggedIn == true">LOG OUT</button>
+          </div>
+        </div>
+      </div>
+    </nav>
