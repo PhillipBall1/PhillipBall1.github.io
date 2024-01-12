@@ -3,6 +3,12 @@
 ### Author: Phillip Ball
 ### Occupation: Senior in College
 
+|Link| Where To|
+|--|--|
+|[Technologies](#technologies-used)|The technologies I used for the development of this full-stack website|
+|[Log](#developer-log)|Developer log for dates of when components of the website was added or changed|
+|[To-Do](#to-do)|Changes I need to make or plans for future components|
+
 ## Project  Overview
 
 Welcome to my full-stack website project. The main objective of this website is to show the practical skills I have learned over the years as a programmer. This is a showcase of an application that can be applied to the real-world. I created the front-end and back-end all by myself and this project started on 12/13/23.
@@ -23,6 +29,8 @@ While this project demonstrates my current position as a software engineer, it p
 
 ### Technologies Used
 
+[Back To Top](#the-leaf-lounge)
+
 |Technologies| Use |
 |---|---|
 |Angular CLI| Used angular for the whole front-end framework
@@ -37,6 +45,8 @@ While this project demonstrates my current position as a software engineer, it p
 |Dotenv| Used for environment variables|
 
 ### Developer Log
+
+[Back To Top](#the-leaf-lounge)
 
 |Date|Change|Additions|Deletions|
 |--|--|--|--|
@@ -55,6 +65,8 @@ While this project demonstrates my current position as a software engineer, it p
 
 
 ### To-Do
+
+[Back To Top](#the-leaf-lounge)
 
 |Do|Reason|
 |--|--|
