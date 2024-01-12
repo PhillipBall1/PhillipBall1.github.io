@@ -40,6 +40,7 @@ While this project demonstrates my current position as a software engineer, it p
 
 |Date|Change|Additions|Deletions|
 |--|--|--|--|
+|01/12/24|About a whole week and a half of work, had to wait to push this as I was adding moderator privileges to my website and was just worried something might happen to my database somehow, had to wait until I finished all of the user API endpoints and login/register additions to my website|2,224|610|
 |12/30/23|Changed a bunch of things here, not going to make a commit for a while until I make the whole user collection and incorporate it into my website so I can make an admin user that is able to operate on the database from the website, such as create, update, delete plants|583|237|
 |12/29/23|Finished the feature section for good, might have some more ideas for it. Finalized the navbar design.|275|131|
 |12/26/23|Worked on the responsiveness of all of the components to make sure that it was able to work on every device|462|410|
