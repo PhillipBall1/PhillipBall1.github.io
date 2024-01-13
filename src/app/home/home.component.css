@@ -17,19 +17,10 @@
     font-weight: 700;
     font-family:"Clarkson",Helvetica,sans-serif;
     background-color: var(--cw-3);
-    display: flex;
-    flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
     height: 100svh;
-    scroll-snap-type: y proximity;
   }
-  section{
-    width: 100svw;
-    scroll-snap-align: start;
-  }
-
-
 
   @media(max-width: 800px){
     body{
