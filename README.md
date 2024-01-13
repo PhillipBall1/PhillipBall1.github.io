@@ -50,7 +50,7 @@ While this project demonstrates my current position as a software engineer, it p
 
 |Date|Change|Additions|Deletions|
 |--|--|--|--|
-|1/12/24| Added caching, fixed some bugs in the website, I think I am giving up on the database response time for now, mainly because I am using Heroku for a cheap $7 option and if I wanted to upgrade, I would have to pay ~$21 a month for better performing Dynos, looking at the performance of Heroku, the metrics show a response time of on average 200ms+|41|33|
+|1/12/24| **Apparently the slow server response is from OperaGX, every other browser loads fine, weird issue** Added caching, fixed some bugs in the website, I think I am giving up on the database response time for now, mainly because I am using Heroku for a cheap $7 option and if I wanted to upgrade, I would have to pay ~$21 a month for better performing Dynos, looking at the performance of Heroku, the metrics show a response time of on average 200ms+|41|33|
 |01/12/24|About a whole week and a half of work, had to wait to push this as I was adding moderator privileges to my website and was just worried something might happen to my database somehow, had to wait until I finished all of the user API endpoints and login/register additions to my website|2,224|610|
 |12/30/23|Changed a bunch of things here, not going to make a commit for a while until I make the whole user collection and incorporate it into my website so I can make an admin user that is able to operate on the database from the website, such as create, update, delete plants|583|237|
 |12/29/23|Finished the feature section for good, might have some more ideas for it. Finalized the navbar design.|275|131|
