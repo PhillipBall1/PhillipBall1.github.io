@@ -37,7 +37,7 @@ While this project demonstrates my current position as a software engineer, it p
 | REST API| Used for all of my back-end operations along with express
 |MongoDB| Used for my database, I usually use MySQL, I just wanted to learn Mongo|
 |Github Pages| Used to host my page because Github is nice and free|
-|Heroku| Used to host my API, it is only $7 a month, can't complain|
+|Heroku| Used to host my API, it is only $7 or less per month, can't complain|
 |MidJourney| Used to create all of the images you see on the website, such as the plant images and the landing page image|
 |JWT Token| Used to generate tokens to authenticate users|
 |Bcrypt| Used to hash passwords for higher security|
@@ -50,6 +50,7 @@ While this project demonstrates my current position as a software engineer, it p
 
 |Date|Change|Additions|Deletions|
 |--|--|--|--|
+|1/12/24| Added caching, fixed some bugs in the website, I think I am giving up on the database response time for now, mainly because I am using Heroku for a cheap $7 option and if I wanted to upgrade, I would have to pay ~$21 a month for better performing Dynos|41|33|
 |01/12/24|About a whole week and a half of work, had to wait to push this as I was adding moderator privileges to my website and was just worried something might happen to my database somehow, had to wait until I finished all of the user API endpoints and login/register additions to my website|2,224|610|
 |12/30/23|Changed a bunch of things here, not going to make a commit for a while until I make the whole user collection and incorporate it into my website so I can make an admin user that is able to operate on the database from the website, such as create, update, delete plants|583|237|
 |12/29/23|Finished the feature section for good, might have some more ideas for it. Finalized the navbar design.|275|131|
@@ -68,10 +69,10 @@ While this project demonstrates my current position as a software engineer, it p
 
 [Back To Top](#the-leaf-lounge)
 
-|Do|Reason|
-|--|--|
-|Add Caching| After the last push and plenty of work put behind it, I realize that the website loading of the database and the images are extremely slow|
-|Fix Shop Button| Homepage shop button doesn't work, will have that fixed in next push|
-|Checkout| Will be adding a checkout soon for the cart|
-|Navbar Opacity| The navbar doesn't seem to want to be opaque anymore, even though on localhost testing it was|
-|Nav links| Some links are showing improperly and some not at all|
+|Do|Reason|Date of Decision|Date Finished|
+|--|--|--|--|
+|Checkout| Might be adding a checkout soon for the cart, not sure if I will because I really want to start working on a new project for my resume|01/11/24| N/A |
+|~~Add Caching~~| Added caching to solve the problem of slow response time for the database, ended up doing nothing as my database is tiny and my code is optimal|01/11/24|01/12/24|
+|~~Fix Shop Button~~| Shop button functions now|01/11/24|01/12/24|
+|~~Navbar Opacity~~| Navbar opacity wasn't changing and it was due to code being in a ngOnInit instead of the constructor|01/11/24|01/12/24|
+|~~Nav links~~| Some links were showing improperly, had to fix some html *ngIf statements|01/11/24|01/12/24|

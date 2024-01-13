@@ -34,23 +34,29 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
-  .cart-container {
+  .main-container{
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    width: 60rem;
-    max-width: 90%;
-    max-height: 80vh;
     margin-top: 5rem;
     padding: 1rem;
-    border: 1px solid var(--cw-1);
-    border-radius: 0.5rem;
-    font-size: var(--fs-lg);
+    border: inset;
+    border-color: var(--cw-1);
+    border-radius: 4px;
+    font-size: var(--fs-md);
     color: white;
     background-color: var(--cw-3);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 80rem;
+    max-width: 90%;
+    height: 80vh;
+  }
+  .cart-container {
+    font-size: var(--fs-xs);
+    padding: 3rem;
+    max-height: 60vh;
     overflow-y: auto;
   }
   .cart-item {
