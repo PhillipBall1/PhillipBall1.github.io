@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +21,7 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminCreateComponent } from './admin-create/admin-create.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,13 @@ import { UserCartComponent } from './user-cart/user-cart.component';
 		FormsModule,
 		ReactiveFormsModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

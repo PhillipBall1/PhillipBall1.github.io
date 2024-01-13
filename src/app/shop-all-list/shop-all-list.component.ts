@@ -11,6 +11,7 @@ export class ShopAllListComponent {
 
   // Input array to display the plants on the front-end
   @Input() plants!: Plant[];
+  
   constructor(private router: Router){}
 
   /**

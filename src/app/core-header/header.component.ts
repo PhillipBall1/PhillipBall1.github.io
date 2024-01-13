@@ -2,31 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from '../core-service/auth.service';
 import { UserService } from '../core-service/user.service';
+import { User } from '../core-models/users.model';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
-
-  constructor(private router: Router, private auth: AuthService, private userService: UserService) {}
-
-  /**
-   * This method initializes to check for the current route URL through this.router.events
-   * and see if there is an active user through this.auth.isAuthenticated() to find a token.
-   */
-  ngOnInit(): void{
-    this.router.events.subscribe((val) => {
-      if (val instanceof NavigationEnd) {
-        this.routeCheck();
-        this.checkAdmin();
-      }
-    });
-
-    // If there is a token, there is an active user, if not, then there is no active user.
-    this.loggedIn = this.auth.isAuthenticated();
-  }
+export class HeaderComponent{
 
   // Used to check if the current route should make the navbar background opaque
   hideNavBG = false;
@@ -38,10 +21,31 @@ export class HeaderComponent implements OnInit{
   loggedIn = false;
 
   /**
+   * Constructor: Injects the necessary services for navigation and user authentication.
+   * Subscribes to route changes to adjust UI elements.
+   * Checks for user authentication to update the loggedIn status.
+   * @param router - The Angular Router for navigation
+   * @param auth - The AuthService for authentication checks
+   * @param userService - The UserService for user-related API calls
+   */
+  constructor(private router: Router, private auth: AuthService, private userService: UserService) {
+    // Subscribe to router events for navigation changes
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.routeCheck();
+      }
+    });
+    // Check authentication status
+    this.loggedIn = this.auth.isAuthenticated();
+    if(this.loggedIn) this.checkAdmin();
+  }
+
+  /**
    * Compares route URLs to see if the navbar background should be opaque or not
    */
   routeCheck() {
-    this.hideNavBG = this.router.url === '/' || this.router.url === '/login';
+    this.hideNavBG = this.router.url == '/' || this.router.url == '/login';
+    console.log("Hide nav: " + this.hideNavBG);
   }
 
   /**
@@ -58,10 +62,19 @@ export class HeaderComponent implements OnInit{
     this.router.navigate(['/login']);
   }
 
+  /**
+   * Initializes every time with ngOnInit.
+   *
+   * This method gets the current user from the auth service.
+   * If a user exists we use the user service to make an API request
+   * to get their details.
+   * Using their details we check if they are an admin or not.
+   * Logs an error incase we can't get the users details
+   */
   checkAdmin() {
-    const currentUser = this.auth.getCurrentUser();
-    if (currentUser) {
-      this.userService.getUserDetails(currentUser.userId).subscribe({
+    var user = this.auth.getCurrentUser();
+    if (user) {
+      this.userService.getUserDetails(user.userId).subscribe({
         next: (user) => {
           this.admin = user.admin;
           console.log("User details:", user);
@@ -72,4 +85,5 @@ export class HeaderComponent implements OnInit{
       });
     }
   }
+
 }
