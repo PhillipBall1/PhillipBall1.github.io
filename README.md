@@ -13,10 +13,6 @@
 
 Welcome to my full-stack website project. The main objective of this website is to show the practical skills I have learned over the years as a programmer. This is a showcase of an application that can be applied to the real-world. I created the front-end and back-end all by myself and this project started on 12/13/23.
 
-### My Journey in Programming
-
-Programming has always been very intriguing to me and I view it in the same way as when I was a kid solving intricate puzzles. I have always enjoyed the feeling of solving something complicated and I receive the same type of feeling from programming. I got my start to programming through making simple java console games and I just worked up the ladder of game development while still working on school projects. I moved to Visual Studios to continue making Windows Forms App games that were a little bit more complicated, then lastly onto Unity where I was making very complicated games, such as top down adventure games and more. I was making a 3D survival game for over a year and as my skills were developing, my code became cleaner and cleaner until it got to a point where the foundation was really hard to deal with as it was produced when I was not as good. I ended up halting this project to start working on projects that I could apply towards a job.
-
 ### The Significance of This Project
 
 This project is a major milestone for me as it goes beyond what I was doing as a personal hobby, giving practical value and application. This full-stack website demonstrates my dedication to conceptualize ideas and successfully implement them. This is a combination of my front-end and back-end skills as a software engineer. 
