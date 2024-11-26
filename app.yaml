@@ -1,8 +1,4 @@
-runtime: nodejs20
-env_variables:
-  NODE_ENV: 'production'
-
-
+runtime: nodejs
 env: flex
 
 manual_scaling:
