@@ -1,9 +1,12 @@
 steps:
-  -name: 'gcr.io/cloud-builder/npm'
-  args: [ 'install' ]
+  # Step 1: Install dependencies
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
 
-  -name: 'gcr.io/cloud-builder/npm'
-  args: [ 'run', 'build', '--prod' ]
+  # Step 2: Build the application
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build', '--prod']
 
-  -name: 'gcr.io/cloud-builder/gcloud'
-  args: ['app', 'deploy', '--version=prod']
+  # Step 3: Deploy the application to App Engine
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', '--version=prod']
