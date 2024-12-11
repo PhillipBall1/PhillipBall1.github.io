@@ -19,10 +19,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18'
-
-    - name: Clear npm cache
-      run: npm cache clean --force
+        node-version: '18'  # Use Node.js 18 or a compatible version for Angular
 
     - name: Install dependencies (Angular)
       run: |
@@ -35,5 +32,3 @@ jobs:
     - name: Deploy to GitHub Pages
       run: |
         npx angular-cli-ghpages --dir=dist --branch=gh-pages
-
-
