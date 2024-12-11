@@ -30,7 +30,7 @@
             ],
             "serviceWorker": false,
             "ngswConfigPath": "ngsw-config.json",
-            "baseHref": "/PhillipBall1.github.io/"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
