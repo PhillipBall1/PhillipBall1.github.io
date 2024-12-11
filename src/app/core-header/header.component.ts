@@ -45,7 +45,6 @@ export class HeaderComponent{
    */
   routeCheck() {
     this.hideNavBG = this.router.url == '/' || this.router.url == '/login';
-    console.log("Hide nav: " + this.hideNavBG);
   }
 
   /**

@@ -1,15 +1,15 @@
 <div class="search-section">
   <div class="search-bar">
     <input type="text" [(ngModel)]="searchQuery" placeholder="Search..." class="search-input">
-    <button class="search-button" (click)="onSearch()">Search</button>
+    <button class="search-button" (click)="applyFilters()">Search</button>
   </div>
   <div class="filters">
-    <select class="filter-dropdown" (change)="categoryChanged()" [(ngModel)]="selectedCategory">
+    <select class="filter-dropdown" (change)="applyFilters()" [(ngModel)]="selectedCategory">
       <option value="">Select Indoors/Outdoors</option>
       <option value="indoor">Indoor</option>
       <option value="outdoor">Outdoor</option>
     </select>
-    <select class="filter-dropdown" (change)="priceChanged()" [(ngModel)]="selectedPrice">
+    <select class="filter-dropdown" (change)="applyFilters()" [(ngModel)]="selectedPrice">
       <option value="">Select a price range</option>
       <option value="0,20">$0-$20</option>
       <option value="20,40">$20-$40</option>

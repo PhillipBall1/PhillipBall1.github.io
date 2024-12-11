@@ -32,30 +32,6 @@ export class ShopAllSearchComponent implements OnInit {
   }
 
   /**
-   * Triggered by the search functionality in the template.
-   * Applies filters based on the current search query and selected criteria.
-   */
-  onSearch() {
-    this.applyFilters();
-  }
-
-  /**
-   * Triggered when the category filter changes.
-   * Applies filters based on the selected category.
-   */
-  categoryChanged() {
-    this.applyFilters();
-  }
-
-  /**
-   * Triggered when the price filter changes.
-   * Applies filters based on the selected price range.
-   */
-  priceChanged() {
-    this.applyFilters();
-  }
-
-  /**
    * Applies search and filter criteria to the list of plants.
    * Updates the displayedPlants based on the search query, selected category, and price.
    */
