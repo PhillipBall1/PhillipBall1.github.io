@@ -27,8 +27,7 @@ jobs:
 
     - name: Build Angular App
       run: |
-        npm run build -- --output-path=docs
-
+        npm run build -- --output-path=dist --base-href="/PhillipBall1.github.io/"
 
     - name: Install angular-cli-ghpages
       run: npm install -g angular-cli-ghpages
@@ -47,6 +46,6 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        npx angular-cli-ghpages --dir=docs --branch=gh-pages --no-silent
+        npx angular-cli-ghpages --dir=dist --branch=gh-pages --no-silent
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
