@@ -39,11 +39,11 @@ jobs:
 
     - name: Set up GitHub token for deployment
       run: |
-        git config --global url."https://x-access-token:${{ secrets.Token }}@github.com".insteadOf "https://github.com"
-        echo "//npm.pkg.github.com/:_authToken=${{ secrets.Token }}" > ~/.npmrc
+        git config --global url."https://x-access-token:${{ secrets.GH_TOKEN  }}@github.com".insteadOf "https://github.com"
+        echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN  }}" > ~/.npmrc
 
     - name: Deploy to GitHub Pages
       run: |
         npx angular-cli-ghpages --dir=dist --branch=gh-pages --no-silent
       env:
-        GITHUB_TOKEN: ${{ secrets.Token }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
