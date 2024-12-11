@@ -28,7 +28,7 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
             ],
-            "serviceWorker": true,
+            "serviceWorker": false,
             "baseHref": "/PhillipBall1.github.io/",
             "ngswConfigPath": "ngsw-config.json"
           },
