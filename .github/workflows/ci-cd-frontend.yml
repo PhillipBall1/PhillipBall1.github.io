@@ -27,7 +27,7 @@ jobs:
 
     - name: Build Angular App
       run: |
-        npm run build
+        npm run build -- --output-path=docs --base-href="/PhillipBall1.github.io/"
 
 
     - name: Install angular-cli-ghpages
