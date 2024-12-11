@@ -29,6 +29,11 @@ jobs:
       run: |
         npm run build -- --output-path=dist --base-href="/PhillipBall1.github.io/"
 
+    - name: Set Git identity
+      run: |
+        git config --global user.email "pball1346@gmail.com"
+        git config --global user.name "PhillipBall1"
+
     - name: Install angular-cli-ghpages
       run: npm install -g angular-cli-ghpages
 
