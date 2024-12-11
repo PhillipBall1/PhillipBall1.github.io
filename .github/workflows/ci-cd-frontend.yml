@@ -32,4 +32,5 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        npx angular-cli-ghpages --dir=dist
+        npx angular-cli-ghpages --dir=dist --silent=false
+
