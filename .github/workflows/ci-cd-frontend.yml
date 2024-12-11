@@ -19,7 +19,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18'
+        node-version: '18'  # Use Node.js 18 or a compatible version for Angular
 
     - name: Install dependencies (Angular)
       run: |
@@ -39,13 +39,11 @@ jobs:
 
     - name: Set up GitHub token for deployment
       run: |
-        git config --global user.email "pball1346@gmail.com"
-        git config --global user.name "PhillipBall1"
-        git config --global url."https://x-access-token:${{ secrets.TOKEN }}@github.com".insteadOf "https://github.com"
-        echo "//npm.pkg.github.com/:_authToken=${{ secrets.TOKEN }}" > ~/.npmrc
+        git config --global url."https://x-access-token:${{ secrets.Token }}@github.com".insteadOf "https://github.com"
+        echo "//npm.pkg.github.com/:_authToken=${{ secrets.Token }}" > ~/.npmrc
 
     - name: Deploy to GitHub Pages
       run: |
         npx angular-cli-ghpages --dir=dist --branch=gh-pages --no-silent
       env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.Token }}
