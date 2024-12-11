@@ -35,6 +35,11 @@ jobs:
         github_token: ${{ secrets.GH_TOKEN }}
         publish_dir: ./docs
 
+    - name: Set Git identity for deployment
+      run: |
+        git config --global user.name "PhillipBall1"
+        git config --global user.email "pball1346@gmail.com"
+
     - name: Deploy to GitHub Pages
       run: |
         npx angular-cli-ghpages --dir=docs --branch=gh-pages --no-silent
