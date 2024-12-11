@@ -29,17 +29,14 @@ jobs:
       run: |
         npm run build -- --output-path=docs --base-href="/"
 
-    - name: Set up GitHub token for deployment
-      run: |
-        git config --global user.name "PhillipBall1"
-        git config --global user.email "pball1346@gmail.com"
-        git config --global url."https://x-access-token:${{ secrets.GH_TOKEN }}@github.com".insteadOf "https://github.com"
+    - name: Install gh-pages Action
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./docs
 
-    - name: Commit and Push to Main
+    - name: Deploy to GitHub Pages
       run: |
-        git add .
-        git commit -m "Deploy to GitHub Pages"
-        git push origin main
+        npx angular-cli-ghpages --dir=docs --branch=gh-pages --no-silent
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
