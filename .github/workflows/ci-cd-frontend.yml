@@ -27,7 +27,7 @@ jobs:
 
     - name: Build Angular App
       run: |
-        npm run build -- --base-href="/"
+        npm run build -- --output-path=docs --base-href="/"
 
     - name: Install gh-pages Action
       uses: peaceiris/actions-gh-pages@v3
@@ -42,6 +42,6 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        npx angular-cli-ghpages --dir=docs --branch=gh-pages --no-silent
+        npx angular-cli-ghpages --dir=docs --no-silent
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
