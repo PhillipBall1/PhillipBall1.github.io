@@ -39,8 +39,10 @@ jobs:
 
     - name: Set up GitHub token for deployment
       run: |
-        git config --global url."https://x-access-token:${{ secrets.GH_TOKEN  }}@github.com".insteadOf "https://github.com"
-        echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN  }}" > ~/.npmrc
+        git config --global user.name "PhillipBall1"
+        git config --global user.email "pball1346@gmail.com"
+        git config --global url."https://x-access-token:${{ secrets.GH_TOKEN }}@github.com".insteadOf "https://github.com"
+
 
     - name: Deploy to GitHub Pages
       run: |
